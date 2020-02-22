@@ -1,14 +1,14 @@
 import Nav from '../components/nav';
 import { NextPage } from 'next';
+import MasterLayout from '../layouts/master/master.layout';
 
 const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
-  <div>
-    <Nav />
+  <MasterLayout>
     <div className="hero">
       <h1 className="title">Next.js + Tailwind CSS</h1>
       <h2>{userAgent}</h2>
     </div>
-  </div>
+  </MasterLayout>
 );
 
 Home.getInitialProps = async ({ req }) => {

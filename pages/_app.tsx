@@ -13,14 +13,14 @@ const theme = {
 type Props = {
   Component: React.ComponentType;
   pageProps: object;
-}
+};
 
-const MyApp: NextPage<Props> = ({ Component, pageProps }) {
+const MyApp: NextPage<Props> = ({ Component, pageProps }) => {
   return (
     <ThemeProvider theme={theme}>
       <Component {...pageProps} />
     </ThemeProvider>
   );
-}
+};
 
 export default MyApp;

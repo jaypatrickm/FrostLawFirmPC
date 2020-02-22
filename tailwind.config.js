@@ -10,6 +10,9 @@ module.exports = {
       },
       spacing: {
         '72': '18rem'
+      },
+      flex: {
+        sticky: '1 0 auto'
       }
     }
   },
