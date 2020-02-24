@@ -5,7 +5,7 @@ import CallButton from '../components/call-button/call-button.component';
 import ContactButton from '../components/contact-button/contact-button.component';
 import Breadcrumbs from '../components/breadcrumbs/breadcrumbs.component';
 import Link from 'next/link';
-import RecognitionAffiliationBlock from '../components/recognition-affiliation-block/recognition-affiliation-block.component';
+import RecognitionAffiliationGallery from '../components/recognition-affiliation-gallery/recognition-affiliation-gallery.component';
 
 const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
   <MasterLayout>
@@ -174,7 +174,7 @@ const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
         </a>
       </Link>
     </div>
-    <RecognitionAffiliationBlock />
+    <RecognitionAffiliationGallery />
   </MasterLayout>
 );
 
