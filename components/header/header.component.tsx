@@ -19,8 +19,8 @@ const Header: NextPage<Props> = ({ showMobileMenu }) => {
   return (
     <HeaderWrapper
       className={
-        (showMenu ? ' absolute h-full ' : '') +
-        'flex flex-col w-screen sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3 bg-white shadow-md'
+        (showMenu ? ' absolute min-h-screen ' : '') +
+        'flex flex-col w-screen sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3 bg-white shadow-md sticky top-0'
       }
     >
       <div className={showMenu ? ' flex-sticky ' : ''}>
