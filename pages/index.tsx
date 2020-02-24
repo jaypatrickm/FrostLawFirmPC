@@ -5,6 +5,7 @@ import CallButton from '../components/call-button/call-button.component';
 import ContactButton from '../components/contact-button/contact-button.component';
 import Breadcrumbs from '../components/breadcrumbs/breadcrumbs.component';
 import Link from 'next/link';
+import RecognitionAffiliationBlock from '../components/recognition-affiliation-block/recognition-affiliation-block.component';
 
 const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
   <MasterLayout>
@@ -91,7 +92,7 @@ const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
       <div className="-mt-8 mx-4 bg-white shadow pb-4">
         <img
           className="h-40 w-full object-cover object-top"
-          src="images/about/dadandmom.jpg"
+          src="/images/about/dadandmom.jpg"
         />
         <div>
           <h4 className="px-4 pt-3 text-lg text-black font-bold leading-tight">
@@ -123,7 +124,7 @@ const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
       <div className="-mt-8 mx-4 bg-white shadow pb-4">
         <img
           className="h-45 w-full object-cover object-center"
-          src="images/blog/mesowalk/mesowalk+team-frost-law-firm+tracysaundersart+3.jpg"
+          src="/images/blog/mesowalk/mesowalk+team-frost-law-firm+tracysaundersart+3.jpg"
         />
         <div>
           <h4 className="px-4 pt-3 text-lg text-black font-bold leading-tight">
@@ -150,7 +151,7 @@ const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
       <div className="bg-white flex mx-4 mb-4 shadow">
         <img
           className="h-40 w-1/2 object-cover object-top"
-          src="images/blog/keenantrialinstitute/kti-newsletter-cover.jpg"
+          src="/images/blog/keenantrialinstitute/kti-newsletter-cover.jpg"
         />
         <span className="p-3 text-black font-bold text-lg">
           Scott featured in the Keenan Trial Institute Newsletter
@@ -159,7 +160,7 @@ const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
       <div className="bg-white flex mx-4 mb-4 shadow">
         <img
           className="h-40 w-1/2 object-cover object-top"
-          src="images/blog/nph/nph-video-cover.jpg"
+          src="/images/blog/nph/nph-video-cover.jpg"
         />
         <span className="p-3 text-black font-bold text-lg">
           Neil Patrick Harris gets out of Jury Duty thanks to Scott
@@ -173,33 +174,7 @@ const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
         </a>
       </Link>
     </div>
-    <div className="bg-frost-light-gray pt-8 px-4 pb-10">
-      <h2 className="text-frost-light-blue font-extrabold text-4xl leading-tight">
-        Recognition & Affiliation
-      </h2>
-      <div className="flex items-center mt-6 px-2 py-6 h-72 bg-white rounded-xl">
-        <img
-          className="h-56 w-full object-contain object-center"
-          src="images/affiliations/ntl-top-100-member-b.png"
-        />
-      </div>
-      <div className="flex flex-col items-center mt-6 px-2 py-6 h-72 bg-white rounded-xl">
-        <img
-          className="h-56 w-full object-contain object-center"
-          src="images/affiliations/usdva-accredited-attorney.png"
-        />
-        <div className="text-center">
-          <Link href="/veterans">
-            <a className="bg-frost-blue text-xl my-3 py-1 px-10 rounded-full text-white font-bold inline-block">
-              Veterans
-            </a>
-          </Link>
-        </div>
-        <span className="-mt-2 text-gray-900 text-xs tracking-tight leading-tight block text-center">
-          *Tap this button to learn more.
-        </span>
-      </div>
-    </div>
+    <RecognitionAffiliationBlock />
   </MasterLayout>
 );
 

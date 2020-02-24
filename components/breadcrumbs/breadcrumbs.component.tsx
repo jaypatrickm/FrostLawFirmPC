@@ -34,6 +34,16 @@ const Breadcrumbs: NextPage<Props> = ({
       ) : (
         ''
       )}
+      {path3 !== undefined && url3 !== undefined ? (
+        <span>
+          <span className="text-frost-blue px-2">/</span>
+          <Link href={url3}>
+            <a className="underline text-frost-blue">{path3}</a>
+          </Link>
+        </span>
+      ) : (
+        ''
+      )}
     </div>
   );
 };

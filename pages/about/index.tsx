@@ -37,7 +37,7 @@ const AboutPage = () => {
           </p>
           <img
             className="pt-4"
-            src="images/about/dadwork.jpg"
+            src="/images/about/dadwork.jpg"
             alt="Scott Frost's father at work"
           />
           <span className="py-2 px-4 block text-xs text-black leading-tight">
@@ -69,7 +69,7 @@ const AboutPage = () => {
           </p>
           <img
             className="pt-4"
-            src="images/about/dadandmom.jpg"
+            src="/images/about/dadandmom.jpg"
             alt="Scott Frost's mother and father"
           />
           <span className="py-2 px-4 block text-xs text-black leading-tight">
