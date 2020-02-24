@@ -17,8 +17,13 @@ const Header: NextPage<Props> = ({ showMobileMenu }) => {
   };
 
   return (
-    <HeaderWrapper>
-      <div className="flex-sticky">
+    <HeaderWrapper
+      className={
+        (showMenu ? ' absolute h-full ' : '') +
+        'flex flex-col w-screen sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3 bg-white shadow-md'
+      }
+    >
+      <div className={showMenu ? ' flex-sticky ' : ''}>
         <div className="flex items-center justify-between px-4 py-3 sm:p-0">
           <div className="text-xl hover:text-blue-900 text-blue-500 font-extrabold">
             <a href="/">

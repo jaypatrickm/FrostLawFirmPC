@@ -1,16 +1,8 @@
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
-export const HeaderWrapper = styled.div.attrs({
-  className:
-    'absolute flex flex-col w-screen h-screen sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3 bg-white'
-})`
-  & {
-    > div {
-      ${tw``}
-    }
-  }
-`;
+export const HeaderWrapper = styled.div.attrs({})``;
+
 export const HeaderContainer = styled.nav.attrs(props => ({
   className: 'flex items-center justify-between flex-wrap bg-teal-500 p-6'
 }))``;

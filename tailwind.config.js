@@ -13,6 +13,15 @@ module.exports = {
       },
       flex: {
         sticky: '1 0 auto'
+      },
+      letterSpacing: {
+        specialWide: '1.26em'
+      },
+      fontSize: {
+        '2xs': '.375rem'
+      },
+      borderRadius: {
+        xl: '1rem'
       }
     }
   },
