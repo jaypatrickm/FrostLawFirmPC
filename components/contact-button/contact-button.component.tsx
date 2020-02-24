@@ -3,7 +3,7 @@ import Button from '../button/button.component';
 import { NextPage } from 'next';
 
 type Props = {
-  className: string;
+  className?: string;
 };
 
 const ContactButton: NextPage<Props> = ({ className }) => {

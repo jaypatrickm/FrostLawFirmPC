@@ -4,7 +4,7 @@ import LogoSvg from '../../assets/icons/logo/logo.svg';
 import LogoText from '../../assets/icons/logo-text/logo-text.svg';
 const Footer = () => {
   return (
-    <div>
+    <div className="flex-shrink-0">
       <div className="flex bg-frost-light-blue text-white py-4">
         <div className="w-1/4">
           <div className="flex justify-center">

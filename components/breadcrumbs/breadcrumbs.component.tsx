@@ -11,12 +11,29 @@ type Props = {
   url3?: string;
 };
 
-const Breadcrumbs: NextPage<Props> = ({ path1, url1 }) => {
+const Breadcrumbs: NextPage<Props> = ({
+  path1,
+  url1,
+  path2,
+  url2,
+  path3,
+  url3
+}) => {
   return (
     <div className="py-2 px-4">
       <Link href={url1}>
         <a className="underline text-frost-blue">{path1}</a>
       </Link>
+      {path2 !== undefined && url2 !== undefined ? (
+        <span>
+          <span className="text-frost-blue px-2">/</span>
+          <Link href={url2}>
+            <a className="underline text-frost-blue">{path2}</a>
+          </Link>
+        </span>
+      ) : (
+        ''
+      )}
     </div>
   );
 };

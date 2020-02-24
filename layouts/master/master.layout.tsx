@@ -8,9 +8,9 @@ interface Props {
 }
 
 const MasterLayout = (props: Props) => (
-  <div>
+  <div className="flex flex-col min-h-screen">
     <Header showMobileMenu={false} />
-    {props.children}
+    <div className="flex-sticky">{props.children}</div>
     <Footer />
   </div>
 );
