@@ -3,11 +3,11 @@ import { NextPage } from 'next';
 import Link from 'next/link';
 
 type Props = {
-  children: React.ReactNode;
-  url: string;
+  children?: string;
+  url?: string;
 };
 
-const Button: NextPage<Props> = ({ children, url }) => {
+const Button: NextPage<Props> = ({ children = [], url = '' }) => {
   return (
     <Link href={url}>
       <a className="py-2 text-white bg-frost-blue rounded-full block w-full">

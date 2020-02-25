@@ -8,7 +8,7 @@ const Menu: NextPage<Props> = ({ showMenu }) => {
   return (
     <svg
       className="fill-current hover:text-blue-900 text-blue-500"
-      style={{ margin: '3px', width: '40px' }}
+      style={{ margin: '4px 5px 5px', width: '40px' }}
       viewBox="0 0 800 800"
     >
       <path
