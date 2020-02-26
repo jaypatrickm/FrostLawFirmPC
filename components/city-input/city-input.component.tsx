@@ -3,6 +3,7 @@ import FormInput from '../../components/form-input/form-input.component';
 
 const CityInput = () => {
   const [isCityValid, setIsCityValid] = useState(true);
+  const [city, setCity] = useState('');
   const handleCityChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ): void => {
@@ -22,6 +23,7 @@ const CityInput = () => {
       labelRequired={true}
       isValid={isCityValid}
       handleChange={handleCityChange}
+      inputValue={city}
     />
   );
 };

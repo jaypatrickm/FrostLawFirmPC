@@ -3,6 +3,7 @@ import FormInput from '../../components/form-input/form-input.component';
 
 const FullNameInput = () => {
   const [isFullNameValid, setIsFullNameValid] = useState(true);
+  const [fullName, setFullName] = useState('');
   const handleFullNameChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ): void => {
@@ -22,6 +23,7 @@ const FullNameInput = () => {
       labelRequired={true}
       isValid={isFullNameValid}
       handleChange={handleFullNameChange}
+      inputValue={fullName}
     />
   );
 };
