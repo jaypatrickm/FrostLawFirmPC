@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import CheckboxSvg from '../../assets/icons/checkbox/checkbox.svg';
+import CheckboxSvg from '../../components/icons/checkbox/checkbox.svg';
 
 type Props = {
   value: string;

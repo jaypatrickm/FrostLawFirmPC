@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NextPage } from 'next';
-import PlusMinusSvg from '../../assets/icons/plusminus/plusminus.svg';
+import PlusMinusSvg from '../../components/icons/plusminus/plusminus.svg';
 import { create } from 'domain';
 
 type Props = {

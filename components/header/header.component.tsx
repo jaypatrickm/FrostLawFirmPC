@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { NextPage } from 'next';
 import { HeaderWrapper } from './header.styles';
-import LogoSvg from '../../assets/icons/logo/logo.svg';
-import LogoText from '../../assets/icons/logo-text/logo-text.svg';
-import Menu from '../../assets/icons/menu/menu.svg';
+import LogoSvg from '../../components/icons/logo/logo.svg';
+import LogoText from '../../components/icons/logo-text/logo-text.svg';
+import Menu from '../../components/icons/menu/menu.svg';
 type Props = {
   showMobileMenu: boolean;
 };

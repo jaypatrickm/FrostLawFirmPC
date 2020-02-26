@@ -8,6 +8,7 @@ type Props = {
   labelName: string;
   labelRequired: boolean;
   isValid: boolean;
+  inputValue: string;
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
@@ -19,7 +20,8 @@ const FormInput = ({
   labelName,
   labelRequired,
   isValid,
-  handleChange
+  handleChange,
+  inputValue
 }: Props) => {
   return (
     <div>
@@ -28,6 +30,7 @@ const FormInput = ({
         {labelRequired ? <span className="text-red-600">*</span> : ''}
       </label>
       <input
+        value={inputValue}
         onChange={handleChange}
         type={inputType}
         name={inputName}

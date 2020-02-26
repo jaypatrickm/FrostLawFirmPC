@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import RadioSvg from '../../assets/icons/radio/radio.svg';
+import RadioSvg from '../../components/icons/radio/radio.svg';
 
 type Props = {
   value: string;
@@ -7,6 +7,7 @@ type Props = {
   inputId: string;
   handleRadio: (event: React.ChangeEvent<HTMLInputElement>) => void;
   selectedOption?: string;
+  tabIndex?: number;
 };
 
 const RadioButton = ({
@@ -14,7 +15,8 @@ const RadioButton = ({
   inputName,
   inputId,
   handleRadio,
-  selectedOption = ''
+  selectedOption = '',
+  tabIndex = -1
 }: Props) => {
   const isActive = selectedOption == value;
   return (
@@ -44,6 +46,7 @@ const RadioButton = ({
           height: 0,
           width: 0
         }}
+        tabIndex={tabIndex}
       />
     </label>
   );
