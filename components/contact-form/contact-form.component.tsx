@@ -229,6 +229,7 @@ const ContactForm = () => {
             id="state"
             className="border-solid border-2 bg-white border-frost-gray w-full p-2 text-lg block rounded-none h-12"
             value={state}
+            style={{ WebkitAppearance: 'none' }}
           >
             {UsStates.map(state => {
               return (
