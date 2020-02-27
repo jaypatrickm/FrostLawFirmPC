@@ -25,21 +25,68 @@ const ContactForm = () => {
   const [comments, setComments] = useState('');
   const [isTextOkay, setIsTextOkay] = useState(false);
 
+  const [fullNameError, setFullNameError] = useState(false);
+  const [cityError, setCityError] = useState(false);
   const [
-    isPreferredContactMethodValid,
-    setIsPreferredContactMethodValid
-  ] = useState(true);
-  const [isFullNameValid, setIsFullNameValid] = useState(true);
-  const [isCityValid, setIsCityValid] = useState(true);
-  const [isEmailValid, setIsEmailValid] = useState(true);
-  const [isPreferredTimeValid, setIsPreferredTimeValid] = useState(true);
-  const [isCellNumberValid, setIsCellNumberValid] = useState(true);
-  const [isHomeNumberValid, setIsHomeNumberValid] = useState(true);
+    preferredContactMethodError,
+    setPreferredContactMethodError
+  ] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [cellNumberError, setCellNumberError] = useState(false);
+  const [homeNumberError, setHomeNumberError] = useState(false);
+  const [preferredTimeError, setPreferredTimeError] = useState(false);
 
   const [isPreferredTimeRequired, setIsPreferredTimeRequired] = useState(false);
   const [isEmailRequired, setIsEmailRequired] = useState(false);
   const [isCellNumberRequired, setIsCellNumberRequired] = useState(false);
   const [isHomeNumberRequired, setIsHomeNumberRequired] = useState(false);
+
+  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+    event.preventDefault();
+    console.log(validateFullName(fullName));
+
+    setFullNameError(!validateFullName(fullName));
+    setCityError(!validateCity(city));
+    setPreferredContactMethodError(
+      !(
+        preferredContactMethod === 'Email' || preferredContactMethod === 'Phone'
+      )
+    );
+    if (preferredContactMethod === 'Email')
+      setEmailError(!validateEmail(email));
+
+    if (preferredContactMethod === 'Phone') {
+      setCellNumberError(!validateIsPhone(cellNumber));
+      setHomeNumberError(!validateIsPhone(homeNumber));
+      setPreferredTimeError(preferredTime.length <= 0);
+    }
+    console.log(fullNameError);
+    console.log(cityError);
+    console.log(preferredContactMethodError);
+    fullNameError ||
+    cityError ||
+    preferredContactMethodError ||
+    (preferredContactMethod === 'Email' ? emailError : false) ||
+    ((preferredContactMethod === 'Phone'
+      ? cellNumberError && homeNumberError
+      : false) &&
+      (preferredContactMethod === 'Phone' ? preferredTimeError : false))
+      ? console.log('form has errors')
+      : console.log('good form');
+
+    console.log('fullName: ' + fullName);
+    console.log('city: ' + city);
+    console.log('state: ' + state);
+    console.log('preferred contact method : ' + preferredContactMethod);
+    console.log('email: ' + email);
+    console.log('cellNumber: ' + cellNumber);
+    console.log('isTextOkay: ' + isTextOkay);
+    console.log('homeNumber: ' + homeNumber);
+    console.log('preferredTime: ' + preferredTime);
+    console.log('hasDiagnosis: ' + hasDiagnosis);
+    console.log('hasBiopsyBeenPerformed: ' + hasBiopsyBeenPerformed);
+    console.log('comments: ' + comments);
+  };
 
   const handleFullNameChange = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -47,7 +94,7 @@ const ContactForm = () => {
     const value = event.target.value;
     const isValid = validateFullName(value);
 
-    setIsFullNameValid(isValid);
+    setFullNameError(!isValid);
     setFullName(value);
   };
 
@@ -57,7 +104,7 @@ const ContactForm = () => {
     const value = event.target.value;
     const isValid = validateCity(value);
 
-    setIsCityValid(isValid);
+    setCityError(!isValid);
     setCity(value);
   };
 
@@ -75,7 +122,7 @@ const ContactForm = () => {
     const value = event.target.value;
     const isValid = value === 'Email' || value === 'Phone';
 
-    setIsPreferredContactMethodValid(isValid);
+    setPreferredContactMethodError(!isValid);
     setPreferredContactMethod(value);
 
     // if value is phone
@@ -100,7 +147,7 @@ const ContactForm = () => {
     const value = event.target.value;
     const isValid = validateEmail(value);
 
-    setIsEmailValid(isValid);
+    setEmailError(!isValid);
     setEmail(value);
   };
 
@@ -110,7 +157,7 @@ const ContactForm = () => {
     const value = event.target.value;
     const isValid = validateIsPhone(value);
 
-    setIsCellNumberValid(isValid);
+    setCellNumberError(!isValid);
     setCellNumber(value);
   };
 
@@ -128,7 +175,7 @@ const ContactForm = () => {
     const value = event.target.value;
     const isValid = validateIsPhone(value);
 
-    setIsHomeNumberValid(isValid);
+    setHomeNumberError(!isValid);
     setHomeNumber(value);
   };
 
@@ -152,9 +199,9 @@ const ContactForm = () => {
         ? false
         : true;
 
-      setIsPreferredTimeValid(isValid);
+      setPreferredTimeError(!isValid);
     } else {
-      setIsPreferredTimeValid(true);
+      setPreferredTimeError(false);
     }
   };
 
@@ -186,10 +233,6 @@ const ContactForm = () => {
     setComments(event.target.value);
   };
 
-  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
-    event.preventDefault();
-  };
-
   return (
     <form onSubmit={handleFormSubmit}>
       <div className="pb-3 px-4">
@@ -197,12 +240,12 @@ const ContactForm = () => {
           inputName="fullName"
           inputType="text"
           inputId="fullName"
-          inputRequiredText="ex. John Doe"
+          inputErrorText="ex. John Doe"
           labelName="Full Name"
           labelRequired={true}
-          isValid={isFullNameValid}
           handleChange={handleFullNameChange}
           inputValue={fullName}
+          hasError={fullNameError}
         />
       </div>
       <div className="flex flex-wrap px-4">
@@ -211,12 +254,12 @@ const ContactForm = () => {
             inputName="city"
             inputType="text"
             inputId="city"
-            inputRequiredText="ex. San Pedro"
+            inputErrorText="ex. San Pedro"
             labelName="City"
             labelRequired={true}
-            isValid={isCityValid}
             handleChange={handleCityChange}
             inputValue={city}
+            hasError={cityError}
           />
         </div>
         <div className="pb-3 pl-1 w-1/2 relative">
@@ -247,9 +290,9 @@ const ContactForm = () => {
       </div>
       <div
         className={
-          (isPreferredContactMethodValid
-            ? ''
-            : 'border-solid border-2 border-frost-blue pt-3 ') + 'pb-3 px-4'
+          (preferredContactMethodError
+            ? 'border-solid border-2 border-frost-blue pt-3 '
+            : '') + 'pb-3 px-4'
         }
       >
         <h4 className="block pb-1 font-bold text-xl">
@@ -271,12 +314,12 @@ const ContactForm = () => {
           handleRadio={handleContactMethodChange}
           selectedOption={preferredContactMethod}
         />
-        {isPreferredContactMethodValid ? (
-          ''
-        ) : (
+        {preferredContactMethodError ? (
           <span className="pt-1 inline-block text-xl text-frost-blue">
             Preferred Contact Method required
           </span>
+        ) : (
+          ''
         )}
       </div>
       <div
@@ -291,12 +334,12 @@ const ContactForm = () => {
             inputName="email"
             inputType="email"
             inputId="email"
-            inputRequiredText="Email Required"
+            inputErrorText="Email Required"
             labelName="Email"
             labelRequired={isEmailRequired}
-            isValid={isEmailValid}
             handleChange={handleEmailChange}
             inputValue={email}
+            hasError={emailError}
           />
         </div>
       </div>
@@ -318,12 +361,12 @@ const ContactForm = () => {
             inputName="cellNumber"
             inputType="text"
             inputId="cellNumber"
-            inputRequiredText="ex. (310)444-4555"
+            inputErrorText="ex. (310)444-4555"
             labelName="Cell Number"
             labelRequired={isCellNumberRequired}
-            isValid={isCellNumberValid}
             handleChange={handleCellNumberChange}
             inputValue={cellNumber}
+            hasError={cellNumberError}
           />
         </div>
         <Checkbox
@@ -340,12 +383,12 @@ const ContactForm = () => {
             inputName="homeNumber"
             inputType="text"
             inputId="homeNumber"
-            inputRequiredText="ex. 310-555-4444, (310)555-4444, 3105554444"
+            inputErrorText="ex. (310)555-4444"
             labelName="Home Number"
             labelRequired={isHomeNumberRequired}
-            isValid={isHomeNumberValid}
             handleChange={handleHomeNumberChange}
             inputValue={homeNumber}
+            hasError={homeNumberError}
           />
         </div>
         <div className="pb-3">
@@ -378,7 +421,7 @@ const ContactForm = () => {
             handleCheck={handlePreferredTimeChange}
             value="Evening"
           />
-          {isPreferredTimeRequired ? (
+          {preferredTimeError ? (
             <span className="pt-1 block text-xl text-frost-blue">
               Preferred time is required
             </span>

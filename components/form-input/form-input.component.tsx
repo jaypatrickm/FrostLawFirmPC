@@ -4,11 +4,11 @@ type Props = {
   inputName: string;
   inputType: string;
   inputId: string;
-  inputRequiredText: string;
+  inputErrorText: string;
   labelName: string;
   labelRequired: boolean;
-  isValid: boolean;
   inputValue: string;
+  hasError: boolean;
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
@@ -16,12 +16,12 @@ const FormInput = ({
   inputName,
   inputType,
   inputId,
-  inputRequiredText,
+  inputErrorText,
   labelName,
   labelRequired,
-  isValid,
   handleChange,
-  inputValue
+  inputValue,
+  hasError
 }: Props) => {
   return (
     <div>
@@ -31,20 +31,20 @@ const FormInput = ({
       </label>
       <input
         value={inputValue}
-        onChange={handleChange}
+        onBlur={handleChange}
         type={inputType}
         name={inputName}
         id={inputId}
         className={
-          (!isValid
+          (hasError
             ? 'border-4 border-frost-blue bg-frost-lightest-blue '
             : 'border-2 border-frost-gray bg-white ') +
           'border-solid w-full p-2 text-lg block h-12'
         }
       />
-      {!isValid ? (
+      {hasError ? (
         <span className="pt-1 inline-block text-xl text-frost-blue">
-          {inputRequiredText}
+          {inputErrorText}
         </span>
       ) : (
         ''
