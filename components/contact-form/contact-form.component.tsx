@@ -240,8 +240,8 @@ const ContactForm = () => {
             })}
           </select>
 
-          <div className="pointer-events-none absolute mt-6 inset-y-0 right-0 flex items-center pr-3 text-gray-700">
-            <DropdownArrowSvg className="w-5" />
+          <div className="pointer-events-none absolute mt-6 top-0 right-0 flex items-center pr-3 text-gray-700">
+            <DropdownArrowSvg className="w-6 mt-6" />
           </div>
         </div>
       </div>
