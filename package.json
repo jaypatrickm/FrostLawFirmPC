@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@types/styled-components": "^5.0.0",
+    "@types/yup": "^0.26.32",
     "babel-plugin-macros": "^2.8.0",
     "formik": "^2.1.4",
     "next": "^9.2.0",

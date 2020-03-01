@@ -2,7 +2,7 @@ import React from 'react';
 import { NextPage } from 'next';
 
 type Props = {
-  isActive: boolean;
+  isActive?: boolean;
   className?: string;
 };
 const PlusMinus: NextPage<Props> = ({ isActive, className }) => {

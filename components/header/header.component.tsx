@@ -19,18 +19,26 @@ const Header: NextPage<Props> = ({ showMobileMenu }) => {
   return (
     <HeaderWrapper
       className={
-        (showMenu ? ' absolute min-h-screen ' : '') +
-        'flex flex-col w-screen sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3 bg-white shadow-md sticky top-0 z-10'
+        (showMenu
+          ? ' absolute min-h-screen sm:min-h-full  sm:relative md:w-full '
+          : '') +
+        'flex flex-col w-full sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3 bg-white shadow-md sticky top-0 z-10'
       }
     >
-      <div className={showMenu ? ' flex-sticky ' : ''}>
-        <div className="flex items-center justify-between px-4 py-3 sm:p-0">
+      <div
+        className={
+          showMenu
+            ? ' w-full  md:justify-between flex-sticky sm:flex sm:flex-none'
+            : ' w-full sm:flex sm:justify-between'
+        }
+      >
+        <div className="flex items-center sm:items-center justify-between px-4 py-3 sm:p-0 sm:w-1/3 sm:inline-flex">
           <div className="text-xl hover:text-blue-900 text-blue-500 font-extrabold">
             <a href="/">
               <LogoSvg />
             </a>
           </div>
-          <div>
+          <div className="sm:hidden md:block mr-0 sm:mr-auto md:mr-auto lg:mr-auto">
             <a href="/">
               <LogoText />
             </a>
@@ -48,47 +56,48 @@ const Header: NextPage<Props> = ({ showMobileMenu }) => {
 
         <nav
           className={
-            (showMenu ? 'block' : 'hidden') + ' sm:flex sm:p-0 bg-white'
+            (showMenu ? 'block sm:inline-flex' : 'hidden') +
+            ' sm:flex sm:p-0 bg-white sm:w-2/3 w-full sm:items-center sm:justify-end sm:bg-transparent'
           }
         >
           <a
-            className="block pl-6 py-1 text-frost-blue font-bold text-2xl bg-frost-light-gray border-frost-lightest-blue border-t-2 border-b-2"
+            className="block pl-6 py-1 text-frost-blue font-bold text-2xl sm:pl-3 sm:pr-3 sm:bg-transparent sm:text-sm sm:border-none bg-frost-light-gray border-frost-lightest-blue border-t-2 border-b-2"
             href="/"
           >
             Home
           </a>
 
           <a
-            className="block pl-6 py-1 text-frost-blue font-bold text-2xl bg-frost-light-gray border-frost-lightest-blue border-b-2"
+            className="block pl-6 py-1 text-frost-blue font-bold text-2xl sm:pl-3 sm:pr-3 sm:bg-transparent sm:text-sm sm:border-none bg-frost-light-gray border-frost-lightest-blue border-b-2"
             href="/about"
           >
             About
           </a>
           <a
-            className="block pl-6 py-1 text-frost-blue font-bold text-2xl bg-frost-light-gray border-frost-lightest-blue border-b-2"
+            className="block pl-6 py-1 text-frost-blue font-bold text-2xl sm:pl-3 sm:pr-3 sm:bg-transparent sm:text-sm sm:border-none bg-frost-light-gray border-frost-lightest-blue border-b-2"
             href="/attorneys"
           >
             Attorneys
           </a>
           <a
-            className="block pl-6 py-1 text-frost-blue font-bold text-2xl bg-frost-light-gray border-frost-lightest-blue border-b-2"
+            className="block pl-6 py-1 text-frost-blue font-bold text-2xl sm:pl-3 sm:pr-3 sm:bg-transparent sm:text-sm sm:border-none bg-frost-light-gray border-frost-lightest-blue border-b-2"
             href="/blog"
           >
             Blog
           </a>
           <a
-            className="block pl-6 py-1 text-frost-blue font-bold text-2xl bg-frost-light-gray border-frost-lightest-blue border-b-2"
+            className="block pl-6 py-1 text-frost-blue font-bold text-2xl sm:pl-3 sm:pr-3 sm:bg-transparent sm:text-sm sm:border-none bg-frost-light-gray border-frost-lightest-blue border-b-2"
             href="/veterans"
           >
             Veterans
           </a>
           <a
-            className="block pl-6 py-1 text-frost-blue font-bold text-2xl bg-frost-light-gray border-frost-lightest-blue border-b-2"
+            className="block pl-6 py-1 text-frost-blue font-bold text-2xl sm:pl-3 sm:pr-3 sm:bg-transparent sm:text-sm sm:border-none bg-frost-light-gray border-frost-lightest-blue border-b-2"
             href="/contact"
           >
             Contact
           </a>
-          <div className="pl-6 pt-8 pb-8">
+          <div className="sm:hidden pl-6 pt-8 pb-8">
             <LogoText />
             <p className="pt-3 font-bold text-frost-blue">
               273 West 7th Street <br />
@@ -102,7 +111,7 @@ const Header: NextPage<Props> = ({ showMobileMenu }) => {
       </div>
       <div
         className={
-          (showMenu ? 'block' : 'hidden') +
+          (showMenu ? 'block sm:hidden' : 'hidden') +
           ' flex-shrink bg-frost-blue px-3 py-2'
         }
       >

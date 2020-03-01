@@ -1,7 +1,7 @@
 import React from 'react';
 
 type CheckboxProps = {
-  isActive: boolean;
+  isActive?: boolean;
   className?: string;
 };
 

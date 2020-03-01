@@ -1,40 +1,73 @@
 import React, { useState } from 'react';
+import { useField } from 'formik';
 import CheckboxSvg from '../../components/icons/checkbox/checkbox.svg';
 
-type Props = {
+type CheckboxProps = {
+  label: string;
+  id: string;
+  name: string;
+  required: boolean;
+  tabIndex?: number;
   value: string;
-  inputName: string;
-  inputId: string;
-  handleCheck: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  isChecked: boolean;
+  type: string;
 };
 
-const CheckboxButton = ({
+const Checkbox = ({
+  label,
+  id,
+  required,
+  tabIndex = 0,
   value,
-  inputName,
-  inputId,
-  handleCheck,
-  isChecked
-}: Props) => {
+  name,
+  type,
+  ...props
+}: CheckboxProps) => {
+  const [field, meta, helpers] = useField({ name, type });
+  const { setValue, setTouched } = helpers;
+  const customClickById = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.click();
+    }
+  };
+
   return (
     <label
-      className="inline-block relative py-2 pr-3 mb-2 cursor-pointer text-lg inline-flex items-center"
-      htmlFor={inputId}
+      tabIndex={tabIndex}
+      className="inline-block relative py-2 px-3 mb-2 cursor-pointer text-lg inline-flex items-center"
+      htmlFor={id}
       style={{
         userSelect: 'none'
       }}
+      onKeyDown={(event: React.KeyboardEvent) => {
+        if (event.keyCode == 32) {
+          event.stopPropagation();
+          event.preventDefault();
+          customClickById(id);
+        }
+      }}
     >
       <span className="w-5 inline-block mr-2">
-        <CheckboxSvg isActive={isChecked} />
+        <CheckboxSvg isActive={meta.touched && field.value} />
       </span>
-      {value}
+      {label}
       <input
-        onChange={handleCheck}
-        type="checkbox"
-        name={inputName}
-        id={inputId}
+        tabIndex={-1}
+        type={type}
+        onKeyDown={(event: React.KeyboardEvent) => {
+          if (event.keyCode == 32) {
+            event.stopPropagation();
+            event.preventDefault();
+            customClickById(id);
+          }
+        }}
+        name={name}
+        id={id}
         value={value}
-        checked={isChecked}
+        onChange={e => {
+          setTouched(true);
+          setValue(e.target.checked);
+        }}
         style={{
           position: 'absolute',
           opacity: 0,
@@ -46,4 +79,4 @@ const CheckboxButton = ({
     </label>
   );
 };
-export default CheckboxButton;
+export default Checkbox;
