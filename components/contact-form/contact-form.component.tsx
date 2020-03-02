@@ -14,6 +14,7 @@ const ContactForm = () => {
   const [method, setMethod] = useState('');
   const [newEmailError, setNewEmailError] = useState(false);
   const [cellRequired, setCellRequired] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleMethod = (value: string) => {
     setMethod(value);
@@ -121,11 +122,22 @@ const ContactForm = () => {
             hasDiagnosis: yup.array().notRequired(),
             biopsyPerformed: yup.mixed().notRequired()
           })}
-          onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-            }, 400);
+          onSubmit={async (values, { setSubmitting }) => {
+            await fetch('/api/contact', {
+              method: 'post',
+              headers: {
+                Accept: 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(values)
+            }).then(res => {
+              setSubmitted(res.status === 200);
+            });
+            //console.log(JSON.stringify(values, null, 2));
+            // setTimeout(() => {
+            //   alert(JSON.stringify(values, null, 2));
+            //   setSubmitting(false);
+            // }, 400);
           }}
         >
           <Form>
