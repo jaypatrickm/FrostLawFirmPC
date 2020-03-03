@@ -1,8 +1,8 @@
 import Nav from '../../components/nav';
 import { NextPage } from 'next';
-import MasterLayout from '../../layouts/master/master.layout';
+import MasterLayout from '../../views/layouts/master/master.layout';
 import AttorneysButton from '../../components/attorneys-button/attorneys-button.component';
-import ContactButton from '../../components/contact-button/contact-button.component';
+import ContactButton from '../../components/desktop/contact-button/contact-button.component';
 import Breadcrumbs from '../../components/breadcrumbs/breadcrumbs.component';
 import Link from 'next/link';
 import RecognitionAffiliationGallery from '../../components/recognition-affiliation-gallery/recognition-affiliation-gallery.component';
@@ -10,7 +10,7 @@ import RecognitionAffiliationGallery from '../../components/recognition-affiliat
 const Blog: NextPage<{ userAgent: string }> = ({ userAgent }) => (
   <MasterLayout>
     <div className="bg-frost-light-gray">
-      <Breadcrumbs path1="Home" url1="/" path2="Blog" url2="/blog" />
+      <Breadcrumbs path1="Home" url1="/" path2="Blog" url2="blog" />
     </div>
     <div className="bg-white mt-4 pb-5">
       <div className="mx-4 bg-white shadow pb-4 mb-4">
@@ -33,10 +33,7 @@ const Blog: NextPage<{ userAgent: string }> = ({ userAgent }) => (
             Heart, Lung & Blood Institute, was established in 2012 with the...
           </p>
           <div className="text-center">
-            <Link
-              href="/blog/Team-Frost-Law-
-            Firm-joins-the-8th-annual-Walk-for-Mesothelioma-2019"
-            >
+            <Link href="/blog/Team-Frost-Law-Firm-joins-the-8th-annual-Walk-for-Mesothelioma-2019">
               <a className="bg-frost-blue text-xl my-3 py-1 px-10 rounded-full text-white font-bold inline-block">
                 Read more
               </a>
@@ -60,8 +57,8 @@ const Blog: NextPage<{ userAgent: string }> = ({ userAgent }) => (
             August 16th, 2019
           </span>
           <p className="px-4 pt-3 text-md leading-tight">
-            Recently Scott L. Frost was featured in the Keenan Trial Institute
-            Newsletter...
+            Check out Scott L. Frost in the Keenan Trial Institute
+            newsletter!...
           </p>
           <div className="text-center">
             <Link href="/blog/Scott-featured-in-the-Keenan-Trial-Institute-Newsletter">
@@ -79,7 +76,7 @@ const Blog: NextPage<{ userAgent: string }> = ({ userAgent }) => (
         />
         <div>
           <h4 className="px-4 pt-3 text-2xl text-frost-blue font-extrabold leading-6">
-            Neil Patrick Harris gets out of Jury Duty thanks to Scott
+            Neil Patrick Harris gets out of jury duty thanks to Scott
           </h4>
           <span className="px-4 block text-sm text-gray-700 font-semibold">
             Posted By Frost Law Firm
@@ -93,7 +90,7 @@ const Blog: NextPage<{ userAgent: string }> = ({ userAgent }) => (
             was selecting...
           </p>
           <div className="text-center">
-            <Link href="/blog/Neil-Patrick-Harris-get-out-of-Jury-Duty-thanks-to-Scott">
+            <Link href="/blog/Neil-Patrick-Harris-gets-out-of-jury-duty-thanks-to-Scott">
               <a className="bg-frost-blue text-xl my-3 py-1 px-10 rounded-full text-white font-bold inline-block">
                 Read more
               </a>

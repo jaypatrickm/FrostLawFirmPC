@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../button/button.component';
+import Button from '../mobile/button/button.component';
 import { NextPage } from 'next';
 
 type Props = {

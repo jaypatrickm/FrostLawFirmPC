@@ -38,7 +38,7 @@ const Header: NextPage<Props> = ({ showMobileMenu }) => {
               <LogoSvg />
             </a>
           </div>
-          <div className="sm:hidden md:block mr-0 sm:mr-auto md:mr-auto lg:mr-auto">
+          <div className="sm:hidden md:block mr-0 sm:mr-auto md:mr-auto md:pl-2 lg:mr-auto">
             <a href="/">
               <LogoText />
             </a>
@@ -60,41 +60,23 @@ const Header: NextPage<Props> = ({ showMobileMenu }) => {
             ' sm:flex sm:p-0 bg-white sm:w-2/3 w-full sm:items-center sm:justify-end sm:bg-transparent'
           }
         >
-          <a
-            className="block pl-6 py-1 text-frost-blue font-bold text-2xl sm:pl-3 sm:pr-3 sm:bg-transparent sm:text-sm sm:border-none bg-frost-light-gray border-frost-lightest-blue border-t-2 border-b-2"
-            href="/"
-          >
+          <a className="nav-link" href="/">
             Home
           </a>
 
-          <a
-            className="block pl-6 py-1 text-frost-blue font-bold text-2xl sm:pl-3 sm:pr-3 sm:bg-transparent sm:text-sm sm:border-none bg-frost-light-gray border-frost-lightest-blue border-b-2"
-            href="/about"
-          >
+          <a className="nav-link" href="/about">
             About
           </a>
-          <a
-            className="block pl-6 py-1 text-frost-blue font-bold text-2xl sm:pl-3 sm:pr-3 sm:bg-transparent sm:text-sm sm:border-none bg-frost-light-gray border-frost-lightest-blue border-b-2"
-            href="/attorneys"
-          >
+          <a className="nav-link" href="/attorneys">
             Attorneys
           </a>
-          <a
-            className="block pl-6 py-1 text-frost-blue font-bold text-2xl sm:pl-3 sm:pr-3 sm:bg-transparent sm:text-sm sm:border-none bg-frost-light-gray border-frost-lightest-blue border-b-2"
-            href="/blog"
-          >
+          <a className="nav-link" href="/blog">
             Blog
           </a>
-          <a
-            className="block pl-6 py-1 text-frost-blue font-bold text-2xl sm:pl-3 sm:pr-3 sm:bg-transparent sm:text-sm sm:border-none bg-frost-light-gray border-frost-lightest-blue border-b-2"
-            href="/veterans"
-          >
+          <a className="nav-link" href="/veterans">
             Veterans
           </a>
-          <a
-            className="block pl-6 py-1 text-frost-blue font-bold text-2xl sm:pl-3 sm:pr-3 sm:bg-transparent sm:text-sm sm:border-none bg-frost-light-gray border-frost-lightest-blue border-b-2"
-            href="/contact"
-          >
+          <a className="nav-link" href="/contact">
             Contact
           </a>
           <div className="sm:hidden pl-6 pt-8 pb-8">
@@ -112,7 +94,7 @@ const Header: NextPage<Props> = ({ showMobileMenu }) => {
       <div
         className={
           (showMenu ? 'block sm:hidden' : 'hidden') +
-          ' flex-shrink bg-frost-blue px-3 py-2'
+          ' flex-shrink bg-frost-blue p-4'
         }
       >
         <h3 className="block text-white font-bold text-2xl tracking-tight leading-tight">

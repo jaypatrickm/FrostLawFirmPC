@@ -1,8 +1,8 @@
 import React from 'react';
-import MasterLayout from '../../layouts/master/master.layout';
+import MasterLayout from '../../views/layouts/master/master.layout';
 import { NextPage } from 'next';
 import Breadcrumbs from '../../components/breadcrumbs/breadcrumbs.component';
-import ContactButton from '../../components/contact-button/contact-button.component';
+import ContactButton from '../../components/desktop/contact-button/contact-button.component';
 import Link from 'next/link';
 import AttorneysButton from '../../components/attorneys-button/attorneys-button.component';
 import BlogButton from '../../components/blog-button/blog-button.component';
@@ -11,7 +11,7 @@ const AboutPage = () => {
     <MasterLayout>
       <div>
         <div className="bg-frost-light-gray">
-          <Breadcrumbs path1="Home" url1="/" path2="About" url2="/About" />
+          <Breadcrumbs path1="Home" url1="/" path2="About" url2="about" />
         </div>
         <div className="bg-frost-lightest-blue p-4">
           <h1 className="font-extrabold text-frost-blue text-4xl text-center">

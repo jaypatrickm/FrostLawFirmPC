@@ -50,7 +50,7 @@ const Footer = () => {
           <span className="mt-6 inline-block">&copy; FROST LAW FIRM, PC</span>
         </div>
       </div>
-      <div className="block flex-shrink bg-frost-blue px-3 py-2">
+      <div className="block flex-shrink bg-frost-blue p-4">
         <h3 className="block text-white font-bold text-2xl tracking-tight leading-tight">
           Tap to call +1(866) FLF-MESO
         </h3>

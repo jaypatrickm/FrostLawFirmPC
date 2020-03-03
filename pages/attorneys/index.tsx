@@ -1,7 +1,7 @@
 import React from 'react';
-import MasterLayout from '../../layouts/master/master.layout';
+import MasterLayout from '../../views/layouts/master/master.layout';
 import Breadcrumbs from '../../components/breadcrumbs/breadcrumbs.component';
-import ContactButton from '../../components/contact-button/contact-button.component';
+import ContactButton from '../../components/desktop/contact-button/contact-button.component';
 import Link from 'next/link';
 import BlogButton from '../../components/blog-button/blog-button.component';
 import RecognitionAffiliationGallery from '../../components/recognition-affiliation-gallery/recognition-affiliation-gallery.component';
@@ -17,7 +17,7 @@ const AttorneysPage = () => {
             path1="Home"
             url1="/"
             path2="Attorneys"
-            url2="/attorneys"
+            url2="attorneys"
           />
         </div>
         <div className="bg-frost-lightest-blue p-4">
@@ -52,7 +52,7 @@ const AttorneysPage = () => {
               />
             </div>
             <div className="text-center">
-              <Link href="/attorneys/scott-l-frost">
+              <Link href="/attorneys/andrew-seitz">
                 <a className="bg-frost-blue text-xl my-3 py-1 px-10 rounded-full text-white font-bold inline-block">
                   Andrew Seitz
                 </a>

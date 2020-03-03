@@ -1,0 +1,11 @@
+.blog-card {
+  @apply rounded border-2 border-transparent;
+}
+
+.blog-card:hover {
+  @apply border-2 border-solid cursor-pointer border-frost-blue;
+}
+
+.blog-card:hover a {
+  @apply bg-frost-blue;
+}

@@ -1,0 +1,12 @@
+.nav-link {
+  @apply block pl-6 py-1 text-frost-blue font-bold text-2xl bg-frost-light-gray border-frost-lightest-blue border-t-2 border-b-2;
+}
+
+@screen sm {
+  .nav-link {
+    @apply px-3 bg-transparent text-sm border-2 border-transparent rounded;
+  }
+  .nav-link:hover {
+    @apply text-white bg-frost-blue border-frost-blue;
+  }
+}

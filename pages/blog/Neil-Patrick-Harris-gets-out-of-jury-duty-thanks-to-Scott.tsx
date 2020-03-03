@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import MasterLayout from '../../layouts/master/master.layout';
+import MasterLayout from '../../views/layouts/master/master.layout';
 import { NextPage } from 'next';
 import Breadcrumbs from '../../components/breadcrumbs/breadcrumbs.component';
-import ContactButton from '../../components/contact-button/contact-button.component';
+import ContactButton from '../../components/desktop/contact-button/contact-button.component';
 import Link from 'next/link';
 import AttorneysButton from '../../components/attorneys-button/attorneys-button.component';
 import BlogButton from '../../components/blog-button/blog-button.component';
@@ -20,72 +20,76 @@ const AttorneysPage = () => {
             path1="Home"
             url1="/"
             path2="Blog"
-            url2="/blog"
-            path3="Team Frost Law Firm joins the 8th annual Walk for Mesothelioma 2019"
-            url3="/Team-Frost-Law-
-            Firm-joins-the-8th-annual-Walk-for-Mesothelioma-2019"
+            url2="blog"
+            path3="Neil Patrick Harris gets out of jury duty thanks to Scott"
+            url3="/Neil-Patrick-Harris-gets-out-of-jury-duty-thanks-to-Scott"
           />
-        </div>
-        <div className="image">
-          <img
-            src="/images/blog/mesowalk/mesowalk+team-frost-law-firm+tracysaundersart+1.jpg"
-            alt="Photo of Team Frost Law Firm at the 8th Annual Mesothelioma Walk"
-          />
-          <span className="py-2 px-4 block text-xs text-black leading-tight">
-            Team Frost Law Firm poses during the 8th Annual Mesothelioma Walk at
-            Will Rogers State Historic Park on October 26th 2019.
-          </span>
         </div>
         <div className="bg-white p-4">
           <h1 className="font-extrabold text-frost-blue text-3xl leading-tight">
-            Team Frost Law Firm joins the 8th Annual Walk for Mesothelioma 2019
+            Neil Patrick Harris gets out of jury duty thanks to Scott
           </h1>
         </div>
         <span className="px-4 block text-sm text-gray-700 font-semibold">
           Posted By Frost Law Firm
         </span>
         <span className="px-4 block text-sm text-gray-600">
-          October 26th, 2019
+          August 16th, 2019
         </span>
-        <p className="px-4 mt-3 leading-tight tracking-wider text-lg">
-          The Pacific Mesothelioma Center (PMC), a division of The Pacific
-          Heart, Lung & Blood Institute, established in 2012 holds an annual
-          walk for mesothelioma.
-        </p>
-        <p className="px-4 mt-3 leading-tight tracking-wider text-lg"></p>
-        <div className="image">
-          <img
-            src="/images/blog/mesowalk/mesowalk+team-frost-law-firm+tracysaundersart+2.jpg"
-            alt="Photo of Team Frost Law Firm at the 8th Annual Mesothelioma Walk"
-          />
-          <span className="py-2 px-4 block text-xs text-black leading-tight"></span>
+        <div className="my-3">
+          <iframe
+            className="m-auto"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/suP95tPSbUQ"
+            frameBorder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+          <p className="px-4 mt-3 leading-tight tracking-wider text-lg">
+            Neil Patrick Harris was on The Late Show with James Corden and he
+            discusses his recent experience with jury duty. The 'lawyer' he
+            refers to is actually Scott L. Frost as he was selecting his jury
+            for a trial.
+          </p>
         </div>
-        <div className="image">
-          <img
-            src="/images/blog/mesowalk/mesowalk+team-frost-law-firm+tracysaundersart+3.jpg"
-            alt="Photo of Team Frost Law Firm at the 8th Annual Mesothelioma Walk"
-          />
-          <span className="py-2 px-4 block text-xs text-black leading-tight"></span>
-        </div>
-        <div className="image">
-          <img
-            src="/images/blog/mesowalk/mesowalk+team-frost-law-firm+tracysaundersart+4.jpg"
-            alt="Photo of Team Frost Law Firm at the 8th Annual Mesothelioma Walk"
-          />
-          <span className="py-2 px-4 block text-xs text-black leading-tight"></span>
-        </div>
-        <div className="image">
-          <img
-            src="/images/blog/mesowalk/mesowalk+team-frost-law-firm+tracysaundersart+5.jpg"
-            alt="Photo of Team Frost Law Firm at the 8th Annual Mesothelioma Walk"
-          />
-          <span className="py-2 px-4 block text-xs text-black leading-tight"></span>
-        </div>
+
         <div className="bg-frost-light-gray pb-2">
           <div className="h-24 bg-frost-lightest-blue">
             <h1 className="text-frost-blue text-4xl font-extrabold px-4 pt-2 pb-4 text-center leading-tight">
               See more posts
             </h1>
+          </div>
+
+          <div className="-mt-8 mx-4 bg-white shadow pb-4 mb-4">
+            <img
+              className="h-45 w-full object-cover object-center"
+              src="/images/blog/mesowalk/mesowalk+team-frost-law-firm+tracysaundersart+3.jpg"
+            />
+            <div>
+              <h4 className="px-4 pt-3 text-2xl text-frost-blue font-extrabold leading-6">
+                Team Frost Law Firm joins the 8th annual Walk for Mesothelioma
+                2019
+              </h4>
+              <span className="px-4 block text-sm text-gray-700 font-semibold">
+                Posted By Frost Law Firm
+              </span>
+              <span className="px-4 block text-sm text-gray-600">
+                October 26th, 2019
+              </span>
+              <p className="px-4 pt-3 text-md leading-tight">
+                The Pacific Mesothelioma Center (PMC), a division of The Pacific
+                Heart, Lung & Blood Institute, was established in 2012 with
+                the...
+              </p>
+              <div className="text-center">
+                <Link href="/blog/Team-Frost-Law-Firm-joins-the-8th-annual-Walk-for-Mesothelioma-2019">
+                  <a className="bg-frost-blue text-xl my-3 py-1 px-10 rounded-full text-white font-bold inline-block">
+                    Read more
+                  </a>
+                </Link>
+              </div>
+            </div>
           </div>
           <div className="-mt-8 mx-4 bg-white shadow pb-4 mb-4">
             <img
@@ -103,40 +107,11 @@ const AttorneysPage = () => {
                 August 16th, 2019
               </span>
               <p className="px-4 pt-3 text-md leading-tight">
-                Recently Scott L. Frost was featured in the Keenan Trial
-                Institute Newsletter...
+                Check out Scott L. Frost in the Keenan Trial Institute
+                newsletter!...
               </p>
               <div className="text-center">
                 <Link href="/blog/Scott-featured-in-the-Keenan-Trial-Institute-Newsletter">
-                  <a className="bg-frost-blue text-xl my-3 py-1 px-10 rounded-full text-white font-bold inline-block">
-                    Read more
-                  </a>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="mx-4 bg-white shadow pb-4 mb-4">
-            <img
-              className="h-45 w-full object-cover object-center"
-              src="/images/blog/nph/nph-video-cover.jpg"
-            />
-            <div>
-              <h4 className="px-4 pt-3 text-2xl text-frost-blue font-extrabold leading-6">
-                Neil Patrick Harris gets out of Jury Duty thanks to Scott
-              </h4>
-              <span className="px-4 block text-sm text-gray-700 font-semibold">
-                Posted By Frost Law Firm
-              </span>
-              <span className="px-4 block text-sm text-gray-600">
-                August 16th, 2019
-              </span>
-              <p className="px-4 pt-3 text-md leading-tight">
-                Neil Patrick Harris discusses how he got out of jury duty. The
-                'lawyer' he refers to happens to be our very own Scott L. Frost.
-                He was selecting...
-              </p>
-              <div className="text-center">
-                <Link href="/blog/Neil-Patrick-Harris-get-out-of-Jury-Duty-thanks-to-Scott">
                   <a className="bg-frost-blue text-xl my-3 py-1 px-10 rounded-full text-white font-bold inline-block">
                     Read more
                   </a>
