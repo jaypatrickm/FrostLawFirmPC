@@ -10,7 +10,7 @@ type HomeMobileProps = {
 };
 const HomeMobile = ({ page }: HomeMobileProps) => {
   return (
-    <MasterLayout page="Home">
+    <MasterLayout page={page}>
       <div className="px-4 py-4 sm:max-w-3xl sm:m-auto sm:mt-4">
         <h1 className="text-lg font-extrabold tracking-wide leading-tight sm:text-3xl">
           Have you or someone you know <br className="inline" /> been diagnosed

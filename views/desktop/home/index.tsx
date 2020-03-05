@@ -2,7 +2,7 @@ import React from 'react';
 import MasterLayout from '../../layouts/master/master.layout';
 import Button from '../../../components/desktop/button/button.component';
 import Link from 'next/link';
-import RecognitionAffiliationBlock from '../../../components/desktop/recognition-affiliation-block/recognition-affiliation-block.component';
+
 import LogoSvg from '../../../components/icons/logo/logo.svg';
 import BrickBg from '../../../components/desktop/brick-bg/brick-bg.component';
 import HighlightsBlog from '../../../components/desktop/highlights-block/highlights-block.component';
@@ -14,50 +14,6 @@ type HomeDesktopProps = {
 };
 
 const HomeDesktop = ({ isMobile, page }: HomeDesktopProps) => {
-  const affiliationImages = [
-    {
-      id: 1,
-      imageUrl: '/images/affiliations/ntl-top-100-member-b.png',
-      alt: 'The National Trial Lawyers Top 100 - Frost Law Firm'
-    },
-    {
-      id: 2,
-      imageUrl: '/images/affiliations/american-association-for-justice.png',
-      alt: 'American Association For Justice - Frost Law Firm'
-    },
-    {
-      id: 3,
-      imageUrl: '/images/affiliations/american-board-of-trial-advocates.jpg',
-      alt: 'American Board of Trial Advocates - Frost Law Firm'
-    },
-    {
-      id: 4,
-      imageUrl: '/images/affiliations/KTI-LOGO-FACULTY1.jpg',
-      alt: 'Keenan Trial Institute - Frost Law Firm'
-    },
-    {
-      id: 5,
-      imageUrl: '/images/affiliations/NTL-Top-40-Brass-Badge.png',
-      alt: 'The National Top 40 Under 40 Trial Lawyers - Frost Law Firm'
-    },
-    {
-      id: 6,
-      imageUrl: '/images/affiliations/superlawyers2.png',
-      alt: 'Super Lawyers - Frost Law Firm'
-    },
-    {
-      id: 7,
-      imageUrl: '/images/affiliations/triallawyerscollege.jpg',
-      alt:
-        'Graduate of Trial Lawyers College Thunderhead Ranch Durgis, Wyoming - Frost Law Firm'
-    },
-    {
-      id: 8,
-      imageUrl: '/images/affiliations/usdva-accredited-attorney.png',
-      alt:
-        'U.S. Department of Veterans Affairs Accredited Attorney - Frost Law Firm'
-    }
-  ];
   return (
     <MasterLayout isMobile={isMobile} page={page}>
       <div
@@ -99,7 +55,7 @@ const HomeDesktop = ({ isMobile, page }: HomeDesktopProps) => {
           </div>
         </div>
       </div>
-      <div className="bg-white shadow w-full">
+      <div className="w-full">
         <BrickBg>
           <div className="image max-w-3xl border-white border-16 bg-white mr-auto ml-auto">
             <img
@@ -174,7 +130,7 @@ const HomeDesktop = ({ isMobile, page }: HomeDesktopProps) => {
                 alt="Photo of Scott L. Frost's dad and mom."
               />
               <span className="py-2 block text-sm text-black leading-normal text-center">
-                Scott's Dad and Mom.
+                Scott's dad and mom.
               </span>
             </div>
           </div>
@@ -298,7 +254,6 @@ const HomeDesktop = ({ isMobile, page }: HomeDesktopProps) => {
           </div>
         </div>
       </div>
-      <RecognitionAffiliationBlock items={affiliationImages} />
     </MasterLayout>
   );
 };

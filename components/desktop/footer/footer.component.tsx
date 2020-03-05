@@ -2,9 +2,55 @@ import React from 'react';
 import Link from 'next/link';
 import LogoSvg from '../../icons/logo/logo.svg';
 import LogoText from '../../icons/logo-text/logo-text.svg';
+import RecognitionAffiliationBlock from '../../../components/desktop/recognition-affiliation-block/recognition-affiliation-block.component';
 const Footer = () => {
+  const affiliationImages = [
+    {
+      id: 1,
+      imageUrl: '/images/affiliations/ntl-top-100-member-b.png',
+      alt: 'The National Trial Lawyers Top 100 - Frost Law Firm'
+    },
+    {
+      id: 2,
+      imageUrl: '/images/affiliations/american-association-for-justice.png',
+      alt: 'American Association For Justice - Frost Law Firm'
+    },
+    {
+      id: 3,
+      imageUrl: '/images/affiliations/american-board-of-trial-advocates.jpg',
+      alt: 'American Board of Trial Advocates - Frost Law Firm'
+    },
+    {
+      id: 4,
+      imageUrl: '/images/affiliations/KTI-LOGO-FACULTY1.jpg',
+      alt: 'Keenan Trial Institute - Frost Law Firm'
+    },
+    {
+      id: 5,
+      imageUrl: '/images/affiliations/NTL-Top-40-Brass-Badge.png',
+      alt: 'The National Top 40 Under 40 Trial Lawyers - Frost Law Firm'
+    },
+    {
+      id: 6,
+      imageUrl: '/images/affiliations/superlawyers2.png',
+      alt: 'Super Lawyers - Frost Law Firm'
+    },
+    {
+      id: 7,
+      imageUrl: '/images/affiliations/triallawyerscollege.jpg',
+      alt:
+        'Graduate of Trial Lawyers College Thunderhead Ranch Durgis, Wyoming - Frost Law Firm'
+    },
+    {
+      id: 8,
+      imageUrl: '/images/affiliations/usdva-accredited-attorney.png',
+      alt:
+        'U.S. Department of Veterans Affairs Accredited Attorney - Frost Law Firm'
+    }
+  ];
   return (
     <div className="flex-shrink-0 bg-frost-dark-blue pb-8">
+      <RecognitionAffiliationBlock items={affiliationImages} />
       <div className="flex flex-col md:flex-row max-w-screen-xl border-t border-white text-white m-auto pt-8">
         <div className="md:w-1/3 flex pl-6">
           <div className="md:w-1/3">
