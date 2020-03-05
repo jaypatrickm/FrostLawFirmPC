@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import LogoSvg from '../../components/icons/logo/logo.svg';
-import LogoText from '../../components/icons/logo-text/logo-text.svg';
+import LogoSvg from '../../icons/logo/logo.svg';
+import LogoText from '../../icons/logo-text/logo-text.svg';
 const Footer = () => {
   return (
     <div className="flex-shrink-0">

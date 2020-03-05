@@ -5,7 +5,7 @@ import AttorneysButton from '../../components/attorneys-button/attorneys-button.
 import ContactButton from '../../components/desktop/contact-button/contact-button.component';
 import Breadcrumbs from '../../components/breadcrumbs/breadcrumbs.component';
 import Link from 'next/link';
-import RecognitionAffiliationGallery from '../../components/recognition-affiliation-gallery/recognition-affiliation-gallery.component';
+import RecognitionAffiliationGallery from '../../components/mobile/recognition-affiliation-gallery/recognition-affiliation-gallery.component';
 
 const Blog: NextPage<{ userAgent: string }> = ({ userAgent }) => (
   <MasterLayout>

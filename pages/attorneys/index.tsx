@@ -4,9 +4,9 @@ import Breadcrumbs from '../../components/breadcrumbs/breadcrumbs.component';
 import ContactButton from '../../components/desktop/contact-button/contact-button.component';
 import Link from 'next/link';
 import BlogButton from '../../components/blog-button/blog-button.component';
-import RecognitionAffiliationGallery from '../../components/recognition-affiliation-gallery/recognition-affiliation-gallery.component';
-import HighlightsBlock from '../../components/highlights-block/highlights-block.component';
-import ResultsBlock from '../../components/results-block/results-block.component';
+import RecognitionAffiliationGallery from '../../components/mobile/recognition-affiliation-gallery/recognition-affiliation-gallery.component';
+import HighlightsBlock from '../../components/mobile/highlights-block/highlights-block.component';
+import ResultsBlock from '../../components/mobile/results-block/results-block.component';
 
 const AttorneysPage = () => {
   return (

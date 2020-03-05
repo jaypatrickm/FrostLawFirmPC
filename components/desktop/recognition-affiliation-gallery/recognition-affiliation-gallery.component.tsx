@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Slider from './../slider/slider.component';
+import Slider from '../../slider/slider.component';
 
 const RecognitionAffiliationBlock = () => {
   const affiliationImages = [
@@ -48,8 +48,8 @@ const RecognitionAffiliationBlock = () => {
     }
   ];
   return (
-    <div className="bg-frost-light-gray pt-8 px-4 pb-4">
-      <h2 className="text-frost-light-blue font-extrabold text-4xl leading-tight">
+    <>
+      <h2 className="font-extrabold text-2xl leading-tight">
         Recognition & Affiliation
       </h2>
       <div className="flex items-center mt-6 px-2 py-6 h-72 bg-white rounded-xl">
@@ -81,7 +81,7 @@ const RecognitionAffiliationBlock = () => {
           *Tap this button to learn more.
         </span>
       </div>
-    </div>
+    </>
   );
 };
 

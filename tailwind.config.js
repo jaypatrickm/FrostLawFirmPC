@@ -4,11 +4,13 @@ module.exports = {
       colors: {
         'frost-blue': '#2c74ac',
         'frost-light-blue': '#6494c4',
-        'frost-lightest-blue': '#ccdcec',
         'frost-gray': '#9cacb4',
         'frost-light-gray': '#e9ecee',
         'frost-dark-blue': '#235b86',
-        'frost-darker-blue': '#153751'
+        'frost-darker-blue': '#153751',
+        'frost-orange': '#F18F01',
+        'frost-dark-orange': '#E28413',
+        'frost-white': '#FBF5F3'
       },
       spacing: {
         '72': '18rem'

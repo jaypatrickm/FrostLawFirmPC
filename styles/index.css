@@ -6,4 +6,5 @@
 @import './button.css';
 @import './blog-card.css';
 @import './nav-link.css';
+@import './text-link.css';
 @tailwind utilities;

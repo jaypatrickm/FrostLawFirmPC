@@ -3,8 +3,15 @@ import HomeDesktop from '../views/desktop/home/index';
 import HomeMobile from '../views/mobile/home/index';
 import { isMobileDetector } from '../helpers/utils.helpers';
 
-const Home: NextPage<{ isMobile: boolean }> = ({ isMobile }) => {
-  return isMobile ? <HomeMobile /> : <HomeDesktop />;
+const Home: NextPage<{ isMobile: boolean; page: string }> = ({
+  isMobile,
+  page
+}) => {
+  return isMobile ? (
+    <HomeMobile page={page} />
+  ) : (
+    <HomeDesktop isMobile={isMobile} page={page} />
+  );
 };
 
 Home.getInitialProps = async ({ req }) => {
@@ -12,7 +19,7 @@ Home.getInitialProps = async ({ req }) => {
   let isMobile = isMobileDetector(userAgent);
 
   console.log(isMobile);
-  return { isMobile };
+  return { isMobile, page: 'Home' };
 };
 
 export default Home;

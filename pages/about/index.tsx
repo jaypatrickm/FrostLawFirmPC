@@ -8,7 +8,7 @@ import AttorneysButton from '../../components/attorneys-button/attorneys-button.
 import BlogButton from '../../components/blog-button/blog-button.component';
 const AboutPage = () => {
   return (
-    <MasterLayout>
+    <MasterLayout page="About">
       <div>
         <div className="bg-frost-light-gray">
           <Breadcrumbs path1="Home" url1="/" path2="About" url2="about" />

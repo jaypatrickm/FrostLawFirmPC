@@ -1,0 +1,11 @@
+.text-link {
+  @apply text-frost-blue;
+}
+
+.text-link:visited {
+  @apply text-frost-light-blue;
+}
+
+.text-link:hover {
+  @apply text-frost-orange;
+}

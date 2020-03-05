@@ -1,75 +1,124 @@
 import React from 'react';
 import MasterLayout from '../../layouts/master/master.layout';
 import Button from '../../../components/desktop/button/button.component';
-import ContactButton from '../../../components/desktop/contact-button/contact-button.component';
-import Breadcrumbs from '../../../components/breadcrumbs/breadcrumbs.component';
 import Link from 'next/link';
-import RecognitionAffiliationGallery from '../../../components/recognition-affiliation-gallery/recognition-affiliation-gallery.component';
+import RecognitionAffiliationBlock from '../../../components/desktop/recognition-affiliation-block/recognition-affiliation-block.component';
 import LogoSvg from '../../../components/icons/logo/logo.svg';
 import BrickBg from '../../../components/desktop/brick-bg/brick-bg.component';
+import HighlightsBlog from '../../../components/desktop/highlights-block/highlights-block.component';
+import ResultsBlock from '../../../components/desktop/results-block/results-block.component';
 
-const HomeDesktop = () => {
+type HomeDesktopProps = {
+  isMobile?: boolean;
+  page: string;
+};
+
+const HomeDesktop = ({ isMobile, page }: HomeDesktopProps) => {
+  const affiliationImages = [
+    {
+      id: 1,
+      imageUrl: '/images/affiliations/ntl-top-100-member-b.png',
+      alt: 'The National Trial Lawyers Top 100 - Frost Law Firm'
+    },
+    {
+      id: 2,
+      imageUrl: '/images/affiliations/american-association-for-justice.png',
+      alt: 'American Association For Justice - Frost Law Firm'
+    },
+    {
+      id: 3,
+      imageUrl: '/images/affiliations/american-board-of-trial-advocates.jpg',
+      alt: 'American Board of Trial Advocates - Frost Law Firm'
+    },
+    {
+      id: 4,
+      imageUrl: '/images/affiliations/KTI-LOGO-FACULTY1.jpg',
+      alt: 'Keenan Trial Institute - Frost Law Firm'
+    },
+    {
+      id: 5,
+      imageUrl: '/images/affiliations/NTL-Top-40-Brass-Badge.png',
+      alt: 'The National Top 40 Under 40 Trial Lawyers - Frost Law Firm'
+    },
+    {
+      id: 6,
+      imageUrl: '/images/affiliations/superlawyers2.png',
+      alt: 'Super Lawyers - Frost Law Firm'
+    },
+    {
+      id: 7,
+      imageUrl: '/images/affiliations/triallawyerscollege.jpg',
+      alt:
+        'Graduate of Trial Lawyers College Thunderhead Ranch Durgis, Wyoming - Frost Law Firm'
+    },
+    {
+      id: 8,
+      imageUrl: '/images/affiliations/usdva-accredited-attorney.png',
+      alt:
+        'U.S. Department of Veterans Affairs Accredited Attorney - Frost Law Firm'
+    }
+  ];
   return (
-    <MasterLayout>
+    <MasterLayout isMobile={isMobile} page={page}>
       <div
         style={{ backgroundImage: 'url(/images/unsplash-bg.jpg)' }}
-        className="px-4 py-4 bg-center bg-frost-light-gray flex items-center py-20 justify-center"
+        className="px-4 py-4 bg-center bg-frost-light-gray md:py-20"
       >
-        <div className="sm:w-2/3 p-10 lg:max-w-3xl">
-          <h1 className="text-lg font-extrabold tracking-wide leading-tight sm:text-3xl">
-            Have you or someone you know <br className="inline" /> been
-            diagnosed with
-            <span className="sm:block sm:pb-4">
-              <span className="text-frost-blue"> Mesothelioma</span>,
-              <span className="text-frost-blue"> Asbestosis</span>, or
-              <span className="text-frost-blue"> Lung Cancer</span>?
-            </span>
-          </h1>
-          <div className="mt-10">
-            <div className="w-64 mr-4 inline-block">
-              <Button
-                url="/contact"
-                color="hover:bg-frost-dark-blue bg-frost-blue text-white"
-              >
-                Contact Us
-              </Button>
-            </div>
-            <div className="w-64 inline-block">
-              <Button
-                url="/about"
-                color="hover:bg-gray-600 text-white bg-frost-gray"
-              >
-                About Us
-              </Button>
+        <div className="md:max-w-screen-xl flex items-center md:justify-center m-auto">
+          <div className="w-full lg:w-2/3 md:px-4">
+            <h1 className="text-2xl lg:text-4xl font-extrabold tracking-wide leading-tight md:text-3xl">
+              Have you or someone you know <br className="inline" /> been
+              diagnosed with
+              <span className="sm:block sm:pb-4">
+                <span className="text-frost-blue"> Mesothelioma</span>,
+                <span className="text-frost-blue"> Asbestosis</span>, or
+                <span className="text-frost-blue"> Lung Cancer</span>?
+              </span>
+            </h1>
+            <div className="mt-10 mb-8 flex flex-col items-center md:block">
+              <div className="w-64 mr-4 inline-block">
+                <Button
+                  url="/contact"
+                  color="hover:bg-frost-dark-orange bg-frost-orange text-white"
+                >
+                  Contact Us
+                </Button>
+              </div>
+              <div className="mt-6 md:mt-0 w-64 mr-4 md:mr-0 inline-block">
+                <Button
+                  url="/about"
+                  color="hover:bg-frost-dark-blue text-white bg-frost-blue"
+                >
+                  About Us
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="w-1/3 hidden md:block">
-          <LogoSvg className="w-64 m-auto" />
+          <div className="lg:w-1/3 hidden lg:block">
+            <LogoSvg className="w-64 m-auto" />
+          </div>
         </div>
       </div>
       <div className="bg-white shadow w-full">
-        <div>
-          <BrickBg>
-            <div className="image max-w-3xl border-white border-16 bg-white mr-auto ml-auto">
-              <img
-                src="/images/blog/mesowalk/mesowalk+team-frost-law-firm+tracysaundersart+1.jpg"
-                alt="Photo of Team Frost Law Firm at the 8th Annual Mesothelioma Walk"
-              />
-              <span className="py-2 block text-sm text-black text-center leading-normal">
-                Team Frost Law Firm poses during the 8th Annual Mesothelioma
-                Walk at Will Rogers State Historic Park on October 26th 2019.
-              </span>
-            </div>
-          </BrickBg>
-        </div>
+        <BrickBg>
+          <div className="image max-w-3xl border-white border-16 bg-white mr-auto ml-auto">
+            <img
+              src="/images/blog/mesowalk/mesowalk+team-frost-law-firm+tracysaundersart+1.jpg"
+              alt="Photo of Team Frost Law Firm at the 8th Annual Mesothelioma Walk"
+            />
+            <span className="py-2 block text-sm text-black text-center leading-normal">
+              Team Frost Law Firm poses during the 8th Annual Mesothelioma Walk
+              at Will Rogers State Historic Park on October 26th 2019.
+            </span>
+          </div>
+        </BrickBg>
       </div>
 
-      <div className="bg-white m-auto py-10 sm:w-5/6 lg:w-8/12 ">
-        <h1 className="text-frost-blue text-4xl font-extrabold px-4 pt-4">
+      <div className="m-auto px-4 py-4 sm:w-5/6 lg:py-8 md:w-8/12 lg:w-7/12 max-w-screen-xl">
+        <h1 className="text-frost-blue text-4xl lg:text-5xl font-extrabold">
           FROST LAW FIRM, PC
         </h1>
-        <p className="px-4 mt-3 leading-tight tracking-wider text-lg">
+        <p className="mt-3 leading-tight tracking-wider text-lg lg:text-2xl">
           The best attorneys for mesothelioma, asbestosis, and lung cancer
           representation. We have represented victims of disease for over
           eighteen years. We represent families who have been harmed by
@@ -77,38 +126,38 @@ const HomeDesktop = () => {
           children and grandchildren and keep our communities safe for these
           future generations.
         </p>
-        <h3 className="px-4 mt-5 text-lg font-bold leading-tight tracking-normal block ">
+        <h3 className="mt-5 text-lg lg:text-2xl font-bold leading-tight tracking-normal block ">
           I have Mesothelioma/Asbestosis/Lung Cancer, what can I do legally?
         </h3>
-        <p className="px-4 mt-3 leading-tight tracking-wider text-lg ">
+        <p className="mt-3 leading-tight tracking-wider text-lg lg:text-2xl">
           First, we sympathize with you during this difficult time and would
           like to say that you are not alone. Our attorneys know first-hand what
           a life-changing diagnosis can do to a person and family.
         </p>
         <Link href="/about">
-          <a className="px-4 mt-3 inline-block text-frost-blue tracking-wider underline text-lg hover:text-frost-dark-blue">
+          <a className="mt-3 text-link inline-block tracking-wider text-lg lg:text-2xl">
             Click here to go to Scott Frost’s story.
           </a>
         </Link>
-        <p className="px-4 mt-3 leading-tight tracking-wider text-lg ">
+        <p className="mt-3 leading-tight tracking-wider text-lg lg:text-2xl">
           Tell us your story and we can help you best decide how you can
           approach your case.
         </p>
-        <h3 className="px-4 mt-5 text-lg font-bold leading-tight tracking-normal block ">
+        <h3 className="mt-5 text-lg lg:text-2xl font-bold leading-tight tracking-normal block ">
           Are Frost Law Firm Mesothelioma/Asbestosis/Lung Cancer attorneys near
           me?
         </h3>
-        <p className="px-4 mt-3 leading-tight tracking-wider text-lg ">
+        <p className="mt-3 leading-tight tracking-wider text-lg lg:text-2xl">
           We have represented mesothelioma patients across the country;
           including Hawaii, California, Washington, Oregon, Florida, Illinois,
           Missouri, Nevada, Massachusetts, New York, Oklahoma, Georgia,
           Kentucky, Louisiana, and Texas.
         </p>
-        <div className="w-full text-center mt-6">
+        <div className="w-full text-center mt-6 lg:mt-8 pb-4">
           <div className="w-64 m-auto inline-block">
             <Button
               url="/contact"
-              color="hover:bg-frost-dark-blue bg-frost-blue text-white"
+              color="hover:bg-frost-dark-orange bg-frost-orange text-white"
             >
               Contact Us
             </Button>
@@ -117,9 +166,9 @@ const HomeDesktop = () => {
       </div>
 
       <BrickBg>
-        <div className="flex items-center justify-center p-4">
-          <div className="w-1/2">
-            <div className="bg-white max-w-lg ml-auto p-3">
+        <div className="flex flex-col sm:flex-row items-center justify-center p-4 max-w-screen-xl m-auto">
+          <div className="md:w-1/2 w-full">
+            <div className="bg-white max-w-lg m-auto sm:ml-auto p-3">
               <img
                 src="/images/about/dadandmom.jpg"
                 alt="Photo of Scott L. Frost's dad and mom."
@@ -129,14 +178,14 @@ const HomeDesktop = () => {
               </span>
             </div>
           </div>
-          <div className="w-1/2 p-8">
-            <h2 className="text-5xl font-extrabold tracking-wide text-white">
+          <div className="md:w-1/2 w-full pt-4 sm:p-8">
+            <h2 className="md:text-5xl m-auto md:ml-0 md:mr-0 font-extrabold tracking-wide text-white text-3xl leading-none ,md:leading-relaxed">
               Scott L. Frost's <br />
               family experience with Lung Cancer
             </h2>
-            <div className="max-w-sm mt-10">
+            <div className="max-w-sm mt-5 m-auto md:ml-0 sm:mt-10">
               <Button
-                color="text-frost-blue bg-white hover:text-white hover:bg-frost-dark-blue"
+                color="text-white bg-frost-orange hover:text-white hover:bg-frost-dark-orange"
                 url="/about"
               >
                 About Us
@@ -145,143 +194,111 @@ const HomeDesktop = () => {
           </div>
         </div>
       </BrickBg>
-      <div className="px-4 py-6 px-10 bg-auto bg-frost-light-gray">
-        <h3 className="text-2xl font-extrabold text-center">
-          Visit our&nbsp;
-          <Link href="/blog">
-            <a className="underline hover:text-frost-blue">blog</a>
-          </Link>
-          .
-        </h3>
-        <div className="flex items-center justify-center mt-4">
-          <div className="w-1/3 p-4 blog-card">
-            <div>
-              <img
-                className="h-45 w-full object-cover object-center"
-                src="/images/blog/mesowalk/mesowalk+team-frost-law-firm+tracysaundersart+3.jpg"
-              />
-              <h4 className="pt-3 text-lg text-black font-bold leading-tight">
-                Team Frost Law Firm joins the 8th annual Walk for Mesothelioma
-                2019
-              </h4>
-              <p className="pt-3 text-md leading-tight">
-                The Pacific Mesothelioma Center (PMC), a division of The Pacific
-                Heart, Lung & Blood Institute, was established in 2012 with
-                the...
-              </p>
-              <div>
-                <Link href="/blog">
-                  <a className="bg-gray-900 text-xl my-3 py-1 px-10 rounded-full text-white font-bold inline-block">
-                    Read more
-                  </a>
-                </Link>
-              </div>
+
+      <div className="px-4 py-6 bg-frost-light-gray shadow">
+        <div className="max-w-screen-xl flex flex-col md:flex-row m-auto">
+          <div className="md:w-1/3">
+            <HighlightsBlog />
+            <div className="mt-4">
+              <ResultsBlock />
             </div>
           </div>
-          <div className="w-1/3 p-4 blog-card">
-            <div>
-              <img
-                className="h-45 w-full object-cover object-center"
-                src="/images/blog/mesowalk/mesowalk+team-frost-law-firm+tracysaundersart+3.jpg"
-              />
-              <h4 className="pt-3 text-lg text-black font-bold leading-tight">
-                Team Frost Law Firm joins the 8th annual Walk for Mesothelioma
-                2019
-              </h4>
-              <p className="pt-3 text-md leading-tight">
-                The Pacific Mesothelioma Center (PMC), a division of The Pacific
-                Heart, Lung & Blood Institute, was established in 2012 with
-                the...
-              </p>
-              <div>
-                <Link href="/blog">
-                  <a className="bg-gray-900 text-xl my-3 py-1 px-10 rounded-full text-white font-bold inline-block">
-                    Read more
-                  </a>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="w-1/3 p-4 blog-card">
-            <div>
-              <img
-                className="h-45 w-full object-cover object-center"
-                src="/images/blog/mesowalk/mesowalk+team-frost-law-firm+tracysaundersart+3.jpg"
-              />
-              <h4 className="pt-3 text-lg text-black font-bold leading-tight">
-                Team Frost Law Firm joins the 8th annual Walk for Mesothelioma
-                2019
-              </h4>
-              <p className="pt-3 text-md leading-tight">
-                The Pacific Mesothelioma Center (PMC), a division of The Pacific
-                Heart, Lung & Blood Institute, was established in 2012 with
-                the...
-              </p>
-              <div>
-                <Link href="/blog">
-                  <a className="bg-gray-900 text-xl my-3 py-1 px-10 rounded-full text-white font-bold inline-block">
-                    Read more
-                  </a>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* <div className="mx-4 bg-white shadow pb-4">
-          <img
-            className="h-45 w-full object-cover object-center"
-            src="/images/blog/mesowalk/mesowalk+team-frost-law-firm+tracysaundersart+3.jpg"
-          />
-          <div>
-            <h4 className="px-4 pt-3 text-lg text-black font-bold leading-tight">
-              Team Frost Law Firm joins the 8th annual Walk for Mesothelioma
-              2019
-            </h4>
-            <p className="px-4 pt-3 text-md leading-tight">
-              The Pacific Mesothelioma Center (PMC), a division of The Pacific
-              Heart, Lung & Blood Institute, was established in 2012 with the...
-            </p>
-            <div className="text-center">
+          <div className="w-full mt-4 md:mt-0 md:w-2/3 md:pl-4">
+            <h3 className="text-2xl lg:text-3xl font-extrabold md:pl-4 mb-2 text-frost-blue">
+              From our&nbsp;
               <Link href="/blog">
-                <a className="bg-frost-blue text-xl my-3 py-1 px-10 rounded-full text-white font-bold inline-block">
-                  Read more
-                </a>
+                <a className="underline hover:text-frost-dark-orange">blog</a>
               </Link>
+              ...
+            </h3>
+            <div className="flex items-center justify-center flex-col">
+              <div className="p-4 blog-card">
+                <div className="flex flex-col md:flex-row md:h-40 md:overflow-hidden">
+                  <div className="md:w-1/3 md:h-auto w-full h-64 overflow-hidden">
+                    <img
+                      className="h-auto object-cover object-center"
+                      src="/images/blog/mesowalk/mesowalk+team-frost-law-firm+tracysaundersart+3.jpg"
+                    />
+                  </div>
+                  <div className="md:w-2/3 md:px-4 pt-2 md:pt-0 w-full">
+                    <h4 className="text-lg lg:text-xl text-frost-blue font-extrabold leading-tight">
+                      Team Frost Law Firm joins the 8th annual Walk for
+                      Mesothelioma 2019
+                    </h4>
+                    <p className="text-md lg:text-lg leading-tight pt-2 text-frost-dark-blue">
+                      The Pacific Mesothelioma Center (PMC), a division of The
+                      Pacific Heart, Lung & Blood Institute, was established in
+                      2012 with the...
+                    </p>
+                    <div>
+                      <Link href="/blog">
+                        <a className="rounded-full underline lg:text-lg text-frost-blue font-bold inline-block">
+                          Read more
+                        </a>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-4 blog-card">
+                <div className="flex flex-col md:flex-row md:h-40 md:overflow-hidden">
+                  <div className="md:w-1/3 md:h-auto w-full h-64 overflow-hidden">
+                    <img
+                      className="h-auto object-cover object-center"
+                      src="/images/blog/keenantrialinstitute/kti-newsletter-cover.jpg"
+                    />
+                  </div>
+                  <div className="md:w-2/3 md:px-4 pt-2 md:pt-0 w-full">
+                    <h4 className="text-lg text-frost-blue font-extrabold leading-tight">
+                      Scott featured in the Keenan Trial Institute Newsletter
+                    </h4>
+                    <p className="text-md leading-tight pt-2 text-frost-dark-blue">
+                      Check out Scott L. Frost in the Keenan Trial Institute
+                      newsletter!
+                    </p>
+                    <div>
+                      <Link href="/blog">
+                        <a className="rounded-full underline text-frost-blue font-bold inline-block">
+                          Read more
+                        </a>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-4 blog-card">
+                <div className="flex flex-col md:flex-row md:h-40 md:overflow-hidden">
+                  <div className="md:w-1/3 md:h-auto w-full h-64 overflow-hidden">
+                    <img
+                      className="h-auto object-cover object-center"
+                      src="/images/blog/nph/nph-video-cover.jpg"
+                    />
+                  </div>
+                  <div className="md:w-2/3 md:px-4 pt-2 md:pt-0  w-full">
+                    <h4 className="text-lg text-frost-blue font-extrabold leading-tight">
+                      Neil Patrick Harris gets out of jury duty thanks to Scott
+                    </h4>
+                    <p className="text-md leading-tight pt-2 text-frost-dark-blue">
+                      Neil Patrick Harris was on The Late Show with James Corden
+                      and he discusses his recent experience with jury duty...
+                    </p>
+                    <div>
+                      <Link href="/blog">
+                        <a className="rounded-full underline text-frost-blue font-bold inline-block">
+                          Read more
+                        </a>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <span className="-mt-2 text-gray-900 text-xs tracking-tight leading-tight block text-center">
-              *Tapping this button will take you to our blog page
-            </span>
           </div>
-        </div> */}
+        </div>
       </div>
-      {/* <div className="bg-frost-light-gray pb-1 mb-0">
-        <div className="bg-white flex mx-4 mb-4 shadow">
-          <img
-            className="h-40 w-1/2 object-cover object-top"
-            src="/images/blog/keenantrialinstitute/kti-newsletter-cover.jpg"
-          />
-          <span className="p-3 text-black font-bold text-lg">
-            Scott featured in the Keenan Trial Institute Newsletter
-          </span>
-        </div>
-        <div className="bg-white flex mx-4 mb-4 shadow">
-          <img
-            className="h-40 w-1/2 object-cover object-top"
-            src="/images/blog/nph/nph-video-cover.jpg"
-          />
-          <span className="p-3 text-black font-bold text-lg">
-            Neil Patrick Harris gets out of jury duty thanks to Scott
-          </span>
-        </div>
-      </div> */}
-      {/* <div className="bg-frost-light-gray px-4">
-        <Link href="/blog">
-          <a className="rounded-full bg-frost-blue text-white text-xl font-bold inline-block py-2 px-2 w-full text-center">
-            View our blog page
-          </a>
-        </Link>
-      </div> */}
-      <RecognitionAffiliationGallery />
+      <RecognitionAffiliationBlock items={affiliationImages} />
     </MasterLayout>
   );
 };

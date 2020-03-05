@@ -4,11 +4,13 @@ import CallButton from '../../../components/call-button/call-button.component';
 import ContactButton from '../../../components/desktop/contact-button/contact-button.component';
 import Breadcrumbs from '../../../components/breadcrumbs/breadcrumbs.component';
 import Link from 'next/link';
-import RecognitionAffiliationGallery from '../../../components/recognition-affiliation-gallery/recognition-affiliation-gallery.component';
-
-const HomeMobile = () => {
+import RecognitionAffiliationGallery from '../../../components/mobile/recognition-affiliation-gallery/recognition-affiliation-gallery.component';
+type HomeMobileProps = {
+  page: string;
+};
+const HomeMobile = ({ page }: HomeMobileProps) => {
   return (
-    <MasterLayout>
+    <MasterLayout page="Home">
       <div className="px-4 py-4 sm:max-w-3xl sm:m-auto sm:mt-4">
         <h1 className="text-lg font-extrabold tracking-wide leading-tight sm:text-3xl">
           Have you or someone you know <br className="inline" /> been diagnosed

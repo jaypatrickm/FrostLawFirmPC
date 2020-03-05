@@ -1,13 +1,18 @@
 import React from 'react';
 import { NextPage } from 'next';
 
-type Props = {
+type LogoTextProps = {
   color?: string;
+  className?: string;
 };
 
-const LogoText: NextPage<Props> = ({ color }) => {
+const LogoText = ({ color, className }: LogoTextProps) => {
   return (
-    <svg style={{ width: '207px' }} viewBox="0 0 261.21 26.38">
+    <svg
+      style={className ? {} : { width: '207px' }}
+      className={className}
+      viewBox="0 0 261.21 26.38"
+    >
       <path
         style={{ fill: color !== undefined ? color : '#2c74ac' }}
         d="M9.23,3.74V11h.5a4.48,4.48,0,0,0,1.9-.35,2.93,2.93,0,0,0,1.25-1.18,5.35,5.35,0,0,0,.67-2.24H14V16h-.45c-.16-1.66-.61-2.76-1.34-3.29a4.12,4.12,0,0,0-2.48-.79h-.5v5.37A5.53,5.53,0,0,0,9.38,19a1.36,1.36,0,0,0,.58.59,2.42,2.42,0,0,0,1.17.25h.58v.48H2.54V19.8h.58a2.44,2.44,0,0,0,1.23-.27,1.21,1.21,0,0,0,.52-.62A5.55,5.55,0,0,0,5,17.28V5.73a6,6,0,0,0-.14-1.68,1.36,1.36,0,0,0-.58-.59,2.31,2.31,0,0,0-1.17-.25H2.54V2.73h14.8v5h-.53a4.62,4.62,0,0,0-.93-2.62,4.07,4.07,0,0,0-2.15-1.21,14.74,14.74,0,0,0-2.87-.19Z"

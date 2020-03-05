@@ -3,9 +3,17 @@
 }
 
 .blog-card:hover {
-  @apply border-2 border-solid cursor-pointer border-frost-blue;
+  @apply border-2 border-solid bg-frost-dark-orange cursor-pointer border-frost-dark-orange text-white;
+}
+
+.blog-card:hover h4 {
+  @apply text-white;
+}
+
+.blog-card:hover p {
+  @apply text-white;
 }
 
 .blog-card:hover a {
-  @apply bg-frost-blue;
+  @apply text-white;
 }

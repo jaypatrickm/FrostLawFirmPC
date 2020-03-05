@@ -4,11 +4,12 @@ import { HeaderWrapper } from './header.styles';
 import LogoSvg from '../../components/icons/logo/logo.svg';
 import LogoText from '../../components/icons/logo-text/logo-text.svg';
 import Menu from '../../components/icons/menu/menu.svg';
-type Props = {
+type HeaderProps = {
   showMobileMenu: boolean;
+  page: string;
 };
 
-const Header: NextPage<Props> = ({ showMobileMenu }) => {
+const Header = ({ showMobileMenu, page }: HeaderProps) => {
   const [showMenu, setShowMenu] = useState(showMobileMenu);
 
   const onClickToggleMenu = () => {
@@ -38,7 +39,7 @@ const Header: NextPage<Props> = ({ showMobileMenu }) => {
               <LogoSvg />
             </a>
           </div>
-          <div className="sm:hidden md:block mr-0 sm:mr-auto md:mr-auto md:pl-2 lg:mr-auto">
+          <div className="sm:hidden lg:block mr-0 sm:mr-auto lg:pl-2 lg:mr-auto">
             <a href="/">
               <LogoText />
             </a>
@@ -60,23 +61,41 @@ const Header: NextPage<Props> = ({ showMobileMenu }) => {
             ' sm:flex sm:p-0 bg-white sm:w-2/3 w-full sm:items-center sm:justify-end sm:bg-transparent'
           }
         >
-          <a className="nav-link" href="/">
+          <a
+            className={(page == 'Home' ? 'active' : '') + ' nav-link'}
+            href="/"
+          >
             Home
           </a>
 
-          <a className="nav-link" href="/about">
+          <a
+            className={(page == 'About' ? 'active' : '') + ' nav-link'}
+            href="/about"
+          >
             About
           </a>
-          <a className="nav-link" href="/attorneys">
+          <a
+            className={(page == 'Attorneys' ? 'active' : '') + ' nav-link'}
+            href="/attorneys"
+          >
             Attorneys
           </a>
-          <a className="nav-link" href="/blog">
+          <a
+            className={(page == 'Blog' ? 'active' : '') + ' nav-link'}
+            href="/blog"
+          >
             Blog
           </a>
-          <a className="nav-link" href="/veterans">
+          <a
+            className={(page == 'Veterans' ? 'active' : '') + ' nav-link'}
+            href="/veterans"
+          >
             Veterans
           </a>
-          <a className="nav-link" href="/contact">
+          <a
+            className={(page == 'Contact' ? 'active' : '') + ' nav-link'}
+            href="/contact"
+          >
             Contact
           </a>
           <div className="sm:hidden pl-6 pt-8 pb-8">

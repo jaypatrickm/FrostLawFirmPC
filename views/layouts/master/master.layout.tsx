@@ -1,17 +1,24 @@
 import React from 'react';
 
 import Header from '../../../components/header/header.component';
-import Footer from '../../../components/footer/footer.component';
+import FooterMobile from '../../../components/mobile/footer/footer.component';
+import FooterDesktop from '../../../components/desktop/footer/footer.component';
 
-interface Props {
+interface MasterLayoutProps {
   children?: object;
+  isMobile?: boolean;
+  page: string;
 }
 
-const MasterLayout = (props: Props) => (
+const MasterLayout = ({
+  isMobile = true,
+  page,
+  ...props
+}: MasterLayoutProps) => (
   <div className="flex flex-col min-h-screen">
-    <Header showMobileMenu={false} />
+    <Header showMobileMenu={false} page={page} />
     <div className="flex-sticky">{props.children}</div>
-    <Footer />
+    {isMobile ? <FooterMobile /> : <FooterDesktop />}
   </div>
 );
 

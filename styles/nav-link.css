@@ -1,12 +1,34 @@
 .nav-link {
-  @apply block pl-6 py-1 text-frost-blue font-bold text-2xl bg-frost-light-gray border-frost-lightest-blue border-t-2 border-b-2;
+  @apply block pl-6 py-1 text-frost-blue font-bold text-2xl bg-frost-light-gray border-frost-light-blue border-b-2;
+}
+.nav-link:first-child {
+  @apply block pl-6 py-1 text-frost-blue font-bold text-2xl bg-frost-light-gray border-frost-light-blue border-t-2;
 }
 
 @screen sm {
   .nav-link {
-    @apply px-3 bg-transparent text-sm border-2 border-transparent rounded;
+    @apply px-3 text-center mx-1 w-24 bg-transparent text-sm border-2 border-transparent rounded;
   }
+  .nav-link:first-child {
+    @apply px-3 text-center mx-1 w-24 bg-transparent text-sm border-2 border-transparent rounded;
+  }
+  .nav-link.active {
+    @apply border-2 border-frost-blue rounded;
+  }
+
   .nav-link:hover {
-    @apply text-white bg-frost-blue border-frost-blue;
+    @apply text-white bg-frost-orange border-frost-orange;
+  }
+}
+
+@screen lg {
+  .nav-link {
+    @apply text-lg w-32;
+  }
+  .nav-link:first-child {
+    @apply text-lg w-32;
+  }
+  .nav-link.active {
+    @apply text-lg;
   }
 }

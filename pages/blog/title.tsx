@@ -6,9 +6,9 @@ import ContactButton from '../../components/desktop/contact-button/contact-butto
 import Link from 'next/link';
 import AttorneysButton from '../../components/attorneys-button/attorneys-button.component';
 import BlogButton from '../../components/blog-button/blog-button.component';
-import RecognitionAffiliationBlock from '../../components/recognition-affiliation-block/recognition-affiliation-block.component';
-import HighlightsBlock from '../../components/highlights-block/highlights-block.component';
-import ResultsBlock from '../../components/results-block/results-block.component';
+import RecognitionAffiliationBlock from '../../components/mobile/recognition-affiliation-block/recognition-affiliation-block.component';
+import HighlightsBlock from '../../components/mobile/highlights-block/highlights-block.component';
+import ResultsBlock from '../../components/mobile/results-block/results-block.component';
 import Accordion from '../../components/accordion/accordion.component';
 
 const AttorneysPage = () => {
