@@ -1,28 +1,24 @@
-import React, { useState } from 'react';
-import MasterLayout from '../../views/layouts/master/master.layout';
-import Breadcrumbs from '../../components/breadcrumbs/breadcrumbs.component';
-import ContactForm from '../../components/contact-form/contact-form.component';
+import { NextPage } from 'next';
+import ContactDesktop from '../../views/desktop/contact/index';
+import ContactMobile from '../../views/mobile/contact/index';
+import { isMobileDetector } from '../../helpers/utils.helpers';
 
-const ContactPage = () => {
-  return (
-    <MasterLayout>
-      <div>
-        <div className="bg-frost-light-gray">
-          <Breadcrumbs path1="Home" url1="/" path2="Contact" url2="contact" />
-        </div>
-        <div className="bg-frost-lightest-blue p-4">
-          <h1 className="font-extrabold text-frost-blue text-4xl text-center">
-            Contact Us
-          </h1>
-        </div>
-        <div className="bg-white pt-6 pb-6">
-          <div className="px-4">
-            <ContactForm />
-          </div>
-        </div>
-      </div>
-    </MasterLayout>
+const Contact: NextPage<{ isMobile: boolean; page: string }> = ({
+  isMobile,
+  page
+}) => {
+  return isMobile ? (
+    <ContactMobile isMobile={isMobile} page={page} />
+  ) : (
+    <ContactDesktop isMobile={isMobile} page={page} />
   );
 };
 
-export default ContactPage;
+Contact.getInitialProps = async ({ req }) => {
+  const userAgent = req ? req.headers['user-agent'] || '' : navigator.userAgent;
+  let isMobile = isMobileDetector(userAgent);
+
+  return { isMobile, page: 'Contact' };
+};
+
+export default Contact;

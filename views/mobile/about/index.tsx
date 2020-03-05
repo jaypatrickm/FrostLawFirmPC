@@ -7,14 +7,14 @@ import Link from 'next/link';
 import AttorneysButton from '../../../components/attorneys-button/attorneys-button.component';
 import BlogButton from '../../../components/blog-button/blog-button.component';
 
-type AboutPageProps = {
+type AboutMobileProps = {
   isMobile: boolean;
   page: string;
 };
 
-const AboutPage = ({ isMobile, page }: AboutPageProps) => {
+const AboutMobile = ({ isMobile, page }: AboutMobileProps) => {
   return (
-    <MasterLayout page={page}>
+    <MasterLayout isMobile={isMobile} page={page}>
       <div>
         <div className="bg-frost-light-gray">
           <Breadcrumbs path1="Home" url1="/" path2="About" url2="about" />
@@ -118,4 +118,4 @@ const AboutPage = ({ isMobile, page }: AboutPageProps) => {
   );
 };
 
-export default AboutPage;
+export default AboutMobile;

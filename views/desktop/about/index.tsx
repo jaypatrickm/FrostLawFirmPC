@@ -8,7 +8,7 @@ type AboutPageProps = {
   page: string;
 };
 
-const AboutPage = ({ isMobile, page }: AboutPageProps) => {
+const AboutDesktop = ({ isMobile, page }: AboutPageProps) => {
   return (
     <MasterLayout isMobile={isMobile} page={page}>
       <div>
@@ -155,4 +155,4 @@ const AboutPage = ({ isMobile, page }: AboutPageProps) => {
   );
 };
 
-export default AboutPage;
+export default AboutDesktop;
