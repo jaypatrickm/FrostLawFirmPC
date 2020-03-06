@@ -1,5 +1,7 @@
 /* purgecss start ignore */
-@tailwind base;
+@import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
 @import './button.css';
 @import './blog-card.css';
 @import './nav-link.css';
@@ -7,7 +9,5 @@
 
 @import './line-clamp.css';
 @import './video-youtube.css';
-@tailwind components;
-/* purgecss end ignore */
 
-@tailwind utilities;
+@import 'tailwindcss/utilities';
