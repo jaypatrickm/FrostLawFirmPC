@@ -15,7 +15,7 @@ const BlogTitle: NextPage<{
     caption?: string;
     author: string;
     postedDate: string;
-    description: string;
+    content: string;
     videoLink?: string;
   };
 }> = ({ isMobile, page, blogPost }) => {

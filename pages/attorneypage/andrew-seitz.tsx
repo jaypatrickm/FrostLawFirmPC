@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import MasterLayout from '../../views/layouts/master/master.layout';
 import { NextPage } from 'next';
 import Breadcrumbs from '../../components/breadcrumbs/breadcrumbs.component';
-import ContactButton from '../../components/desktop/contact-button/contact-button.component';
+import ContactButton from '../../components/_desktop/contact-button/contact-button.component';
 import Link from 'next/link';
 import AttorneysButton from '../../components/attorneys-button/attorneys-button.component';
 import BlogButton from '../../components/blog-button/blog-button.component';
-import RecognitionAffiliationBlock from '../../components/mobile/recognition-affiliation-block/recognition-affiliation-block.component';
-import HighlightsBlock from '../../components/mobile/highlights-block/highlights-block.component';
-import ResultsBlock from '../../components/mobile/results-block/results-block.component';
+import RecognitionAffiliationBlock from '../../components/_mobile/recognition-affiliation-block/recognition-affiliation-block.component';
+import HighlightsBlock from '../../components/_mobile/highlights-block/highlights-block.component';
+import ResultsBlock from '../../components/_mobile/results-block/results-block.component';
 import Accordion from '../../components/accordion/accordion.component';
 
 const AttorneysPage = () => {
@@ -84,15 +84,12 @@ const AttorneysPage = () => {
               />
             </div>
           </div>
-          <p className="px-4 mt-3 leading-tight tracking-wider text-lg">
-            Andrew Seitz is an attorney at Frost Law Firm, PC.
-          </p>
-          <p className="px-4 mt-3 leading-tight tracking-wider text-lg">
+          <p class="px-4 mt-3 leading-tight tracking-wider text-lg">
             Andrew earned his bachelor’s degree from Penn State University and
             was awarded his Juris Doctor degree from Pepperdine University
             School of Law, where he was a Dean’s Merit Scholar.
           </p>
-          <p className="px-4 mt-3 leading-tight tracking-wider text-lg">
+          <p class="px-4 mt-3 leading-tight tracking-wider text-lg">
             Andrew is the author of a law review article titled, “It’s a Series
             of Tubes: Network Neutrality in the United States,” published in the
             Journal of the National Association of Administrative Law Judiciary

@@ -1,10 +1,10 @@
 import React from 'react';
 import MasterLayout from '../../layouts/master/master.layout';
 import CallButton from '../../../components/call-button/call-button.component';
-import ContactButton from '../../../components/desktop/contact-button/contact-button.component';
+import ContactButton from '../../../components/_desktop/contact-button/contact-button.component';
 import Breadcrumbs from '../../../components/breadcrumbs/breadcrumbs.component';
 import Link from 'next/link';
-import RecognitionAffiliationGallery from '../../../components/mobile/recognition-affiliation-gallery/recognition-affiliation-gallery.component';
+import RecognitionAffiliationGallery from '../../../components/_mobile/recognition-affiliation-gallery/recognition-affiliation-gallery.component';
 type HomeMobileProps = {
   page: string;
 };

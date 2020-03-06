@@ -2,7 +2,7 @@ import React from 'react';
 import MasterLayout from '../../../views/layouts/master/master.layout';
 import { NextPage } from 'next';
 import Breadcrumbs from '../../../components/breadcrumbs/breadcrumbs.component';
-import ContactButton from '../../../components/desktop/contact-button/contact-button.component';
+import ContactButton from '../../../components/_desktop/contact-button/contact-button.component';
 import Link from 'next/link';
 import AttorneysButton from '../../../components/attorneys-button/attorneys-button.component';
 import BlogButton from '../../../components/blog-button/blog-button.component';

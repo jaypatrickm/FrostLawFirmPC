@@ -301,16 +301,16 @@ const ContactForm = () => {
               handler={handleMethod}
             />
 
-            <div>
+            <div className="pb-3 px-4">
               <TextArea label="Comments/Questions" name="comments" />
             </div>
 
-            <div className="pb-3 mt-2 px-4">
+            <div className="pb-3 mt-2 px-4 lg:mt-8">
               <button
                 type="submit"
-                className="py-2 text-white bg-frost-blue rounded-full block w-full"
+                className="py-3 lg:py-3 text-white bg-frost-orange hover:bg-frost-dark-orange rounded block w-full"
               >
-                <span className="text-xl font-extrabold tracking-wide leading-tight text-white flex justify-center">
+                <span className="text-xl lg:text-2xl font-extrabold tracking-wide leading-tight text-white flex justify-center">
                   Submit
                 </span>
               </button>

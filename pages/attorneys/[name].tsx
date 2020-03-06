@@ -23,7 +23,7 @@ type AttorneysNameProps = {
     name: string;
     pathName: string;
     imageUrl: string;
-    description: string;
+    content: string;
     affiliations: { id: number; imageUrl: string; alt: string }[];
     listsOfAccomplishments: { title: string; items: string[] }[];
   };

@@ -9,7 +9,7 @@ const PlusMinus: NextPage<Props> = ({ isOpen, className }) => {
   return (
     <svg
       className={className + ' fill-current text-white'}
-      style={{ width: '40px' }}
+      style={{ width: '20px' }}
       viewBox="0 0 500 500"
     >
       <rect

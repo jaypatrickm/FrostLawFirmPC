@@ -1,12 +1,12 @@
 import React from 'react';
 import MasterLayout from '../../layouts/master/master.layout';
-import Button from '../../../components/desktop/button/button.component';
+import Button from '../../../components/_desktop/button/button.component';
 import Link from 'next/link';
 
 import LogoSvg from '../../../components/icons/logo/logo.svg';
-import BrickBg from '../../../components/desktop/brick-bg/brick-bg.component';
-import HighlightsBlog from '../../../components/desktop/highlights-block/highlights-block.component';
-import ResultsBlock from '../../../components/desktop/results-block/results-block.component';
+import BrickBg from '../../../components/_desktop/brick-bg/brick-bg.component';
+import HighlightsBlog from '../../../components/_desktop/highlights-block/highlights-block.component';
+import ResultsBlock from '../../../components/_desktop/results-block/results-block.component';
 
 type HomeDesktopProps = {
   isMobile?: boolean;

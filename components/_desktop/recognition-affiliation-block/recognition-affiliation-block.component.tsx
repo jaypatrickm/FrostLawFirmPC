@@ -7,23 +7,35 @@ type RecognitionAffiliationBlockProps = {
     imageUrl: string;
     alt: string;
   }[];
+  bgColor?: string;
+  headerColor?: string;
+  headerHide?: boolean;
 };
 
 const RecognitionAffiliationBlock = ({
-  items
+  items,
+  bgColor = 'bg-frost-dark-blue',
+  headerColor = 'text-white',
+  headerHide = false
 }: RecognitionAffiliationBlockProps) => {
-  let count = 0;
-
   return (
-    <div className="bg-frost-dark-blue p-4">
+    <div className={bgColor + ' p-4'}>
       <div className="max-w-screen-xl m-auto">
-        <h2 className="font-extrabold text-white text-2xl leading-tight text-center">
-          Recognition & Affiliation
-        </h2>
-        <div className="mt-2 flex flex-row lg:flex-no-wrap flex-wrap m-auto">
-          {items.map((element, index) => {
-            count++;
+        {headerHide ? (
+          ''
+        ) : (
+          <h2
+            className={
+              headerColor +
+              ' font-extrabold text-2xl leading-tight text-center mb-2'
+            }
+          >
+            Recognition & Affiliation
+          </h2>
+        )}
 
+        <div className="flex flex-row lg:flex-no-wrap flex-wrap m-auto">
+          {items.map((element, index) => {
             return (
               <div
                 key={element.id}

@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import MasterLayout from '../../../../views/layouts/master/master.layout';
 import { NextPage } from 'next';
 import Breadcrumbs from '../../../../components/breadcrumbs/breadcrumbs.component';
-import ContactButton from '../../../../components/desktop/contact-button/contact-button.component';
+import ContactButton from '../../../../components/_desktop/contact-button/contact-button.component';
 import Link from 'next/link';
 import AttorneysButton from '../../../../components/attorneys-button/attorneys-button.component';
 import BlogButton from '../../../../components/blog-button/blog-button.component';
-import RecognitionAffiliationBlock from '../../../../components/mobile/recognition-affiliation-block/recognition-affiliation-block.component';
-import HighlightsBlock from '../../../../components/mobile/highlights-block/highlights-block.component';
-import ResultsBlock from '../../../../components/mobile/results-block/results-block.component';
-import Accordion from '../../../../components/accordion/accordion.component';
+import RecognitionAffiliationBlock from '../../../../components/_mobile/recognition-affiliation-block/recognition-affiliation-block.component';
+import HighlightsBlock from '../../../../components/_mobile/highlights-block/highlights-block.component';
+import ResultsBlock from '../../../../components/_mobile/results-block/results-block.component';
+import Accordion from '../../../../components/_mobile/accordion/accordion.component';
 
 type BlogTitleMobileProps = {
   isMobile: boolean;
@@ -21,7 +21,7 @@ type BlogTitleMobileProps = {
     caption?: string;
     author: string;
     postedDate: string;
-    description: string;
+    content: string;
     videoLink?: string;
   };
 };
@@ -39,7 +39,7 @@ const BlogTitleMobile = ({
     caption,
     author,
     postedDate,
-    description,
+    content,
     videoLink
   } = blogPost;
   function createMarkup(value: string) {
@@ -77,7 +77,7 @@ const BlogTitleMobile = ({
           Posted By {author}
         </span>
         <span className="px-4 block text-sm text-gray-600">{postedDate}</span>
-        <div dangerouslySetInnerHTML={createMarkup(description)}></div>>
+        <div dangerouslySetInnerHTML={createMarkup(content)}></div>>
         <div className="bg-frost-light-gray pb-2">
           <div className="h-24 bg-frost-lightest-blue">
             <h1 className="text-frost-blue text-4xl font-extrabold px-4 pt-2 pb-4 text-center leading-tight">

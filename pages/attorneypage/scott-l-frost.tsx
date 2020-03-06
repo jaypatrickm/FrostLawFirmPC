@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import MasterLayout from '../../views/layouts/master/master.layout';
 import { NextPage } from 'next';
 import Breadcrumbs from '../../components/breadcrumbs/breadcrumbs.component';
-import ContactButton from '../../components/desktop/contact-button/contact-button.component';
+import ContactButton from '../../components/_desktop/contact-button/contact-button.component';
 import Link from 'next/link';
 import AttorneysButton from '../../components/attorneys-button/attorneys-button.component';
 import BlogButton from '../../components/blog-button/blog-button.component';
-import RecognitionAffiliationBlock from '../../components/mobile/recognition-affiliation-block/recognition-affiliation-block.component';
-import HighlightsBlock from '../../components/mobile/highlights-block/highlights-block.component';
-import ResultsBlock from '../../components/mobile/results-block/results-block.component';
+import RecognitionAffiliationBlock from '../../components/_mobile/recognition-affiliation-block/recognition-affiliation-block.component';
+import HighlightsBlock from '../../components/_mobile/highlights-block/highlights-block.component';
+import ResultsBlock from '../../components/_mobile/results-block/results-block.component';
 import Accordion from '../../components/accordion/accordion.component';
 
 const AttorneysPage = () => {
@@ -179,52 +179,52 @@ const AttorneysPage = () => {
               />
             </div>
           </div>
-          <p className="px-4 mt-3 leading-tight tracking-wider text-lg">
+          <p class="px-4 mt-3 leading-tight tracking-wider text-lg">
             Scott Frost has represented victims of asbestos related disease for
             over 18 years.
           </p>
 
-          <p className="px-4 mt-3 leading-tight tracking-wider text-lg">
+          <p class="px-4 mt-3 leading-tight tracking-wider text-lg">
             His passion is representing families who have been harmed by
-            corporations.{' '}
+            corporations.
           </p>
 
-          <p className="px-4 mt-3 leading-tight tracking-wider text-lg">
+          <p class="px-4 mt-3 leading-tight tracking-wider text-lg">
             Scott is an experienced litigator who tries benzene exposure and
             defective medical device cases along with asbestos exposure and
-            mesothelioma cases.{' '}
+            mesothelioma cases.
           </p>
 
-          <p className="px-4 mt-3 leading-tight tracking-wider text-lg">
+          <p class="px-4 mt-3 leading-tight tracking-wider text-lg">
             He is licensed to practice law by the state bars of California,
             Washington, Oregon, Hawaii, Georgia, Kentucky, Indiana, and Texas.
           </p>
 
-          <p className="px-4 mt-3 leading-tight tracking-wider text-lg">
+          <p class="px-4 mt-3 leading-tight tracking-wider text-lg">
             Scott is also a member of the the American Board of Trial Advocates.
             He is also accredited by the Department of Veterans Affairs, and he
             formerly served with the Judge Advocate General’s Corps of the U.S.
             Army.
           </p>
 
-          <p className="px-4 mt-3 leading-tight tracking-wider text-lg">
+          <p class="px-4 mt-3 leading-tight tracking-wider text-lg">
             Scott is a cum laude graduate of Xavier University in Cincinnati,
             Ohio, and earned his Juris Doctor degree from the University of
             Kentucky College of Law.
           </p>
 
-          <p className="px-4 mt-3 leading-tight tracking-wider text-lg">
+          <p class="px-4 mt-3 leading-tight tracking-wider text-lg">
             While serving in the United States Army, Scott was appointed as a
             Special Assistant United States Attorney. In that capacity, he tried
             cases on behalf of the United States in District Court in Waco,
             Texas and earned the victim assistance award.
           </p>
 
-          <p className="px-4 mt-3 leading-tight tracking-wider text-lg">
+          <p class="px-4 mt-3 leading-tight tracking-wider text-lg">
             Scott is a graduate of Gerry Spence’s Trial Lawyer’s College.
           </p>
 
-          <p className="px-4 mt-3 leading-tight tracking-wider text-lg">
+          <p class="px-4 mt-3 leading-tight tracking-wider text-lg">
             Since 2000, Scott has successfully tried asbestos cases across the
             country. He has been recognized in Texas Monthly magazine on the
             2005 Law & Politics Texas Rising Stars list and again from 2014
@@ -232,14 +232,14 @@ const AttorneysPage = () => {
             by Thomson Reuters.
           </p>
 
-          <p className="px-4 mt-3 leading-tight tracking-wider text-lg">
+          <p class="px-4 mt-3 leading-tight tracking-wider text-lg">
             Scott is also a frequent presenter at asbestos conferences. His pro
             bono work includes of counsel appointments by the Public Justice
             Foundation for asbestos removal litigation involving the St. Louis
             Airport, the Fort Worth Cowtown Inn project, and St. Bernard Parish.
           </p>
 
-          <p className="px-4 mt-3 leading-tight tracking-wider text-lg">
+          <p class="px-4 mt-3 leading-tight tracking-wider text-lg">
             Scott is a member of the American Association for Justice and is the
             co-chair of the Asbestos Litigation Section.
           </p>

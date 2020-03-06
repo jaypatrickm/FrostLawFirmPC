@@ -2,8 +2,13 @@ import React from 'react';
 import Link from 'next/link';
 import LogoSvg from '../../icons/logo/logo.svg';
 import LogoText from '../../icons/logo-text/logo-text.svg';
-import RecognitionAffiliationBlock from '../../../components/desktop/recognition-affiliation-block/recognition-affiliation-block.component';
-const Footer = () => {
+import RecognitionAffiliationBlock from '../recognition-affiliation-block/recognition-affiliation-block.component';
+
+type FooterProps = {
+  showRecognitionAffiliation?: boolean;
+};
+
+const Footer = ({ showRecognitionAffiliation = true }: FooterProps) => {
   const affiliationImages = [
     {
       id: 1,
@@ -50,9 +55,13 @@ const Footer = () => {
   ];
   return (
     <div className="flex-shrink-0 bg-frost-dark-blue pb-8">
-      <RecognitionAffiliationBlock items={affiliationImages} />
+      {showRecognitionAffiliation ? (
+        <RecognitionAffiliationBlock items={affiliationImages} />
+      ) : (
+        ''
+      )}
       <div className="flex flex-col md:flex-row max-w-screen-xl border-t border-white text-white m-auto pt-8">
-        <div className="md:w-1/3 flex pl-6">
+        <div className="md:w-1/2 flex pl-6">
           <div className="md:w-1/3">
             <LogoSvg color="#fff" />
           </div>
@@ -68,7 +77,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="ml-16 md:w-1/3 flex mt-16 pl-10">
+        <div className="ml-16 md:w-1/2 flex mt-16 pl-10">
           <nav className="flex flex-col">
             <Link href="/sitemap">
               <a className="underline hover:text-frost-orange">Site Map</a>
@@ -83,7 +92,6 @@ const Footer = () => {
             </Link>
           </nav>
         </div>
-        <div className="w-1/3 flex"></div>
       </div>
       <div className="text-center text-white">
         <span className="mt-6 ml-3 inline-block">

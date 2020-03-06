@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import MasterLayout from '../../../layouts/master/master.layout';
 import { NextPage } from 'next';
 import Breadcrumbs from '../../../../components/breadcrumbs/breadcrumbs.component';
-import ContactButton from '../../../../components/desktop/contact-button/contact-button.component';
+import ContactButton from '../../../../components/_desktop/contact-button/contact-button.component';
 import Link from 'next/link';
 import AttorneysButton from '../../../../components/attorneys-button/attorneys-button.component';
 import BlogButton from '../../../../components/blog-button/blog-button.component';
-import RecognitionAffiliationBlock from '../../../../components/mobile/recognition-affiliation-block/recognition-affiliation-block.component';
-import HighlightsBlock from '../../../../components/mobile/highlights-block/highlights-block.component';
-import ResultsBlock from '../../../../components/mobile/results-block/results-block.component';
-import Accordion from '../../../../components/accordion/accordion.component';
+import RecognitionAffiliationBlock from '../../../../components/_mobile/recognition-affiliation-block/recognition-affiliation-block.component';
+import HighlightsBlock from '../../../../components/_mobile/highlights-block/highlights-block.component';
+import ResultsBlock from '../../../../components/_mobile/results-block/results-block.component';
+import Accordion from '../../../../components/_mobile/accordion/accordion.component';
 
 type AttorneysNameMobileProps = {
   attorneysNameMobileProps: {
@@ -21,7 +21,7 @@ type AttorneysNameMobileProps = {
       name: string;
       pathName: string;
       imageUrl: string;
-      description: string;
+      content: string;
       affiliations: { id: number; imageUrl: string; alt: string }[];
       listsOfAccomplishments: { title: string; items: string[] }[];
     };
@@ -36,7 +36,7 @@ const AttorneysNameMobile = ({
     name,
     pathName,
     imageUrl,
-    description,
+    content,
     affiliations,
     listsOfAccomplishments
   } = attorneyInfo;
@@ -74,7 +74,7 @@ const AttorneysNameMobile = ({
           </div>
           <p
             className="px-4 mt-3 leading-tight tracking-wider text-lg"
-            dangerouslySetInnerHTML={createMarkup(description)}
+            dangerouslySetInnerHTML={createMarkup(content)}
           ></p>
         </div>
         <div>

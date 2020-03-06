@@ -1,12 +1,12 @@
 import React from 'react';
 import MasterLayout from '../../../views/layouts/master/master.layout';
 import Breadcrumbs from '../../../components/breadcrumbs/breadcrumbs.component';
-import ContactButton from '../../../components/desktop/contact-button/contact-button.component';
+import ContactButton from '../../../components/_desktop/contact-button/contact-button.component';
 import Link from 'next/link';
 import BlogButton from '../../../components/blog-button/blog-button.component';
-import RecognitionAffiliationGallery from '../../../components/mobile/recognition-affiliation-gallery/recognition-affiliation-gallery.component';
-import HighlightsBlock from '../../../components/mobile/highlights-block/highlights-block.component';
-import ResultsBlock from '../../../components/mobile/results-block/results-block.component';
+import RecognitionAffiliationGallery from '../../../components/_mobile/recognition-affiliation-gallery/recognition-affiliation-gallery.component';
+import HighlightsBlock from '../../../components/_mobile/highlights-block/highlights-block.component';
+import ResultsBlock from '../../../components/_mobile/results-block/results-block.component';
 
 type AttorneysMobileProps = {
   isMobile: boolean;
