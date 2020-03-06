@@ -7,11 +7,7 @@ const Attorneys: NextPage<{ isMobile: boolean; page: string }> = ({
   isMobile,
   page
 }) => {
-  return isMobile ? (
-    <AttorneysMobile isMobile={isMobile} page={page} />
-  ) : (
-    <AttorneysDesktop isMobile={isMobile} page={page} />
-  );
+  return <AttorneysDesktop isMobile={isMobile} page={page} />;
 };
 
 Attorneys.getInitialProps = async ({ req }) => {

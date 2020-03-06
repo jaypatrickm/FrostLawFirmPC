@@ -7,18 +7,13 @@ const Home: NextPage<{ isMobile: boolean; page: string }> = ({
   isMobile,
   page
 }) => {
-  return isMobile ? (
-    <HomeMobile page={page} />
-  ) : (
-    <HomeDesktop isMobile={isMobile} page={page} />
-  );
+  return <HomeDesktop isMobile={isMobile} page={page} />;
 };
 
 Home.getInitialProps = async ({ req }) => {
   const userAgent = req ? req.headers['user-agent'] || '' : navigator.userAgent;
   let isMobile = isMobileDetector(userAgent);
 
-  console.log(isMobile);
   return { isMobile, page: 'Home' };
 };
 

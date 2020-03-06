@@ -7,11 +7,7 @@ const LegalNotice: NextPage<{ isMobile: boolean; page: string }> = ({
   isMobile,
   page
 }) => {
-  return isMobile ? (
-    <LegalNoticeMobile isMobile={isMobile} page={page} />
-  ) : (
-    <LegalNoticeDesktop isMobile={isMobile} page={page} />
-  );
+  return <LegalNoticeDesktop isMobile={isMobile} page={page} />;
 };
 
 LegalNotice.getInitialProps = async ({ req }) => {

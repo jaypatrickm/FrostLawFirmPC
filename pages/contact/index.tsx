@@ -7,11 +7,7 @@ const Contact: NextPage<{ isMobile: boolean; page: string }> = ({
   isMobile,
   page
 }) => {
-  return isMobile ? (
-    <ContactMobile isMobile={isMobile} page={page} />
-  ) : (
-    <ContactDesktop isMobile={isMobile} page={page} />
-  );
+  return <ContactDesktop isMobile={isMobile} page={page} />;
 };
 
 Contact.getInitialProps = async ({ req }) => {

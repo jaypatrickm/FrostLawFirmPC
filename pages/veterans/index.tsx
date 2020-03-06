@@ -7,11 +7,7 @@ const Veterans: NextPage<{ isMobile: boolean; page: string }> = ({
   isMobile,
   page
 }) => {
-  return isMobile ? (
-    <VeteransMobile isMobile={isMobile} page={page} />
-  ) : (
-    <VeteransDesktop isMobile={isMobile} page={page} />
-  );
+  return <VeteransDesktop isMobile={isMobile} page={page} />;
 };
 
 Veterans.getInitialProps = async ({ req }) => {

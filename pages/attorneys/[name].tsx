@@ -30,9 +30,7 @@ type AttorneysNameProps = {
 };
 
 const AttorneysName = (attorneysNameProps: AttorneysNameProps) => {
-  return attorneysNameProps.attorneysNameProps.isMobile ? (
-    <AttorneysNameMobile attorneysNameMobileProps={attorneysNameProps} />
-  ) : (
+  return (
     <AttorneysNameDesktop attorneysNameDesktopProps={attorneysNameProps} />
   );
 };

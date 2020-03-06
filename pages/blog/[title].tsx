@@ -19,9 +19,7 @@ const BlogTitle: NextPage<{
     videoLink?: string;
   };
 }> = ({ isMobile, page, blogPost }) => {
-  return isMobile ? (
-    <BlogTitleMobile isMobile={isMobile} page={page} blogPost={blogPost} />
-  ) : (
+  return (
     <BlogTitleDesktop isMobile={isMobile} page={page} blogPost={blogPost} />
   );
 };

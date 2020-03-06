@@ -7,11 +7,7 @@ const SiteMap: NextPage<{ isMobile: boolean; page: string }> = ({
   isMobile,
   page
 }) => {
-  return isMobile ? (
-    <SiteMapMobile isMobile={isMobile} page={page} />
-  ) : (
-    <SiteMapDesktop isMobile={isMobile} page={page} />
-  );
+  return <SiteMapDesktop isMobile={isMobile} page={page} />;
 };
 
 SiteMap.getInitialProps = async ({ req }) => {

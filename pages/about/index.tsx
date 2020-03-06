@@ -7,11 +7,7 @@ const About: NextPage<{ isMobile: boolean; page: string }> = ({
   isMobile,
   page
 }) => {
-  return isMobile ? (
-    <AboutMobile isMobile={isMobile} page={page} />
-  ) : (
-    <AboutDesktop isMobile={isMobile} page={page} />
-  );
+  return <AboutDesktop isMobile={isMobile} page={page} />;
 };
 
 About.getInitialProps = async ({ req }) => {

@@ -7,11 +7,7 @@ const Blog: NextPage<{ isMobile: boolean; page: string }> = ({
   isMobile,
   page
 }) => {
-  return isMobile ? (
-    <BlogMobile isMobile={isMobile} page={page} />
-  ) : (
-    <BlogDesktop isMobile={isMobile} page={page} />
-  );
+  return <BlogDesktop isMobile={isMobile} page={page} />;
 };
 
 Blog.getInitialProps = async ({ req }) => {
