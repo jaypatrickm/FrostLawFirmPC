@@ -1,0 +1,7 @@
+{
+  "build": {
+    "env": {
+      "sendgrid_api_key": "@sendgrid_api_key"
+    }
+  }
+}
