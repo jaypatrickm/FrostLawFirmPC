@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="flex bg-frost-light-blue text-white py-4">
         <div className="w-1/4">
           <div className="flex justify-center">
-            <LogoSvg color="#fff" />
+            <LogoSvg />
           </div>
         </div>
         <div className="w-3/4 pt-4">
