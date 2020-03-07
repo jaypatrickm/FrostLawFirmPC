@@ -2,9 +2,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'frost-blue': '#2c74ac',
+        'frost-blue': '#2c70ab',
         'frost-light-blue': '#6494c4',
-        'frost-gray': '#9cacb4',
+        'frost-gray': '#9babb2',
         'frost-light-gray': '#e9ecee',
         'frost-dark-blue': '#235b86',
         'frost-darker-blue': '#153751',
@@ -35,6 +35,9 @@ module.exports = {
       }
     }
   },
-  variants: { backgroundColor: ['responsive', 'hover', 'focus', 'active'] },
+  variants: {
+    backgroundColor: ['responsive', 'hover', 'focus', 'active'],
+    textColor: ['responsive', 'hover', 'focus', 'visited']
+  },
   plugins: []
 };

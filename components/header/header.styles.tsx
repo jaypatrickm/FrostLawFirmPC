@@ -1,54 +1,63 @@
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
-export const HeaderWrapper = styled.div.attrs({})``;
+interface HeaderProps {
+  active: boolean;
+}
 
-export const HeaderContainer = styled.nav.attrs(props => ({
-  className: 'flex items-center justify-between flex-wrap bg-teal-500 p-6'
-}))``;
+export const HeaderWrapper = styled.div<HeaderProps>`
+  ${tw`flex flex-col justify-between items-center sm:px-4 sm:py-3 bg-white shadow-md sticky top-0 z-10`}
+  ${({ active }) => (active ? tw` min-h-screen sm:min-h-full sm:relative` : '')}
+`;
 
-export const LogoContainer = styled.div.attrs(props => ({
-  className: 'flex items-center flex-shrink-0 text-white mr-6'
-}))``;
+export const HeaderContentLayoutContainer = styled.div<HeaderProps>`
+  ${tw`w-full sm:flex`}
+  ${({ active }) =>
+    active ? tw`md:justify-between flex-sticky` : tw`sm:justify-between`}
+`;
 
-export const LogoSvgWrapper = styled.svg.attrs(props => ({
-  className: 'fill-current h-8 w-8 mr-2',
-  width: '54',
-  height: '54',
-  viewBox: '0 0 54 54',
-  xmlns: 'http://www.w3.org/2000/svg'
-}))``;
+export const HeaderTopLevelContentContainer = styled.div`
+  ${tw`flex items-center justify-between px-4 py-3 sm:p-0 sm:w-1/3 sm:inline-flex`}
+`;
 
-export const LogoAnchor = styled.a.attrs(props => ({
-  className: 'font-semibold text-xl tracking-tight hover:text-white',
-  href: '#responsive-header'
-}))``;
+export const LogoTextContainer = styled.div`
+  ${tw`sm:hidden lg:block mr-0 sm:mr-auto lg:pl-2`}
+`;
 
-export const MobileMenuContainer = styled.div.attrs(props => ({
-  className: 'block lg:hidden'
-}))``;
+export const MobileMenuContainer = styled.div`
+  ${tw`sm:hidden`}
+`;
 
-export const MobileMenuButton = styled.button.attrs(props => ({
-  className:
-    'flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white'
-}))``;
+export const MobileMenuButton = styled.button`
+  ${tw`block rounded bg-frost-blue hover:bg-frost-orange`}
+`;
 
-export const MobileMenuSvgWrapper = styled.svg.attrs(props => ({
-  className: 'fill-current h-3 w-3',
-  viewBox: '0 0 20 20',
-  xmlns: 'http://www.w3.org/2000/svg'
-}))``;
+export const HeaderNavigation = styled.nav<HeaderProps>`
+  ${tw`sm:flex sm:p-0 bg-white sm:w-2/3 w-full sm:items-center sm:justify-end sm:bg-transparent`}
+  ${({ active }) => (active ? tw` block sm:inline-flex` : tw` hidden`)}
+`;
 
-export const NavContainer = styled.div.attrs(props => ({
-  className: `w-full ${props.className} block flex-grow lg:flex lg:items-center lg:w-auto`
-}))``;
+export const MobileMenuContent = styled.div`
+  ${tw`sm:hidden pl-6 pt-8 pb-8`}
+`;
 
-export const LinkContainer = styled.div.attrs(props => ({
-  className: 'text-sm lg:flex-grow'
-}))``;
+export const Address = styled.p`
+  ${tw`pt-3 font-bold text-frost-blue`}
+`;
 
-export const LinkAnchor = styled.a.attrs(props => ({
-  className:
-    'block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4',
-  href: '#responsive-header'
-}))``;
+export const Phone = styled.span`
+  ${tw`block text-frost-blue`}
+`;
+
+export const PhoneButtonContainer = styled.div<HeaderProps>`
+  ${tw`flex-shrink bg-frost-blue p-4 w-full`}
+  ${({ active }) => (active ? tw` block sm:hidden` : tw` hidden`)}
+`;
+
+export const TapToCallText = styled.h3`
+  ${tw`block text-white font-bold text-2xl tracking-tight leading-tight`}
+`;
+
+export const TapToCallHelpText = styled.span`
+  ${tw`block text-white font-light text-md leading-tight`}
+`;

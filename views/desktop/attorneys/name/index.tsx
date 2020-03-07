@@ -28,8 +28,6 @@ type AttorneysNameDesktopProps = {
 const AttorneysNameDesktop = ({
   attorneysNameDesktopProps
 }: AttorneysNameDesktopProps) => {
-  console.log(attorneysNameDesktopProps);
-
   function createMarkup(value: string) {
     return { __html: value };
   }
@@ -87,7 +85,7 @@ const AttorneysNameDesktop = ({
               />
             </div>
           </div>
-          <div className="flex flex-col-reverse md:flex-row bg-white">
+          <div className="flex flex-col md:flex-row bg-white">
             <div className="w-full md:w-1/3 lg:w-1/3 lg:px-2">
               <div className="flex flex-col items-center px-2 py-6 bg-white">
                 <div>

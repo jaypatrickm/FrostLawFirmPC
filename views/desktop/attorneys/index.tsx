@@ -6,6 +6,23 @@ import BrickBg from '../../../components/_desktop/brick-bg/brick-bg.component';
 import HighlightsBlog from '../../../components/_desktop/highlights-block/highlights-block.component';
 import ResultsBlock from '../../../components/_desktop/results-block/results-block.component';
 import Accordion from '../../../components/_desktop/accordion/accordion.component';
+import styled from 'styled-components';
+import tw from 'tailwind.macro';
+
+const TitledList = styled.div`
+  ${tw`w-full text-center border-2 border-frost-blue text-white`}
+  & {
+    h2 {
+      ${tw`font-bold text-xl text-white bg-frost-blue border-b-2 border-frost-blue py-2`}
+    }
+    ul {
+      ${tw`w-full text-center m-auto text-frost-blue`}
+      li {
+        ${tw`py-1`}
+      }
+    }
+  }
+`;
 
 type AttorneysDesktopProps = {
   isMobile: boolean;
@@ -56,18 +73,16 @@ const AttorneysDesktop = ({ isMobile, page }: AttorneysDesktopProps) => {
                         Scott L. Frost
                       </span>
                     </div>
-                    <div className="w-full text-center bg-frost-dark-blue py-3 text-white">
-                      <h2 className="font-bold text-xl text-frost-orange">
-                        Areas of Expertise
-                      </h2>
-                      <ul className="w-1/2 m-auto">
-                        <li className="py-1">Absestos Litigation</li>
-                        <li className="py-1">Benzene Litigation</li>
-                        <li className="py-1">Unsafe Medical Devices</li>
-                        <li className="py-1">Toxic Tort</li>
-                        <li className="py-1">Product Libaility</li>
+                    <TitledList>
+                      <h2>Areas of Expertise</h2>
+                      <ul>
+                        <li>Absestos Litigation</li>
+                        <li>Benzene Litigation</li>
+                        <li>Unsafe Medical Devices</li>
+                        <li>Toxic Tort</li>
+                        <li>Product Libaility</li>
                       </ul>
-                    </div>
+                    </TitledList>
                   </div>
                   <div className="w-full">
                     <p className="p-4">
@@ -107,18 +122,16 @@ const AttorneysDesktop = ({ isMobile, page }: AttorneysDesktopProps) => {
                         Andrew Seitz
                       </span>
                     </div>
-                    <div className="w-full text-center bg-frost-dark-blue py-3 text-white">
-                      <h2 className="font-bold text-xl text-frost-orange">
-                        Areas of Expertise
-                      </h2>
-                      <ul className="w-1/2 m-auto">
-                        <li className="py-1">Absestos Litigation</li>
-                        <li className="py-1">Toxic Tort</li>
-                        <li className="py-1">Product Liability</li>
-                        <li className="py-1">Personal Injury</li>
-                        <li className="py-1">Premise Libaility</li>
+                    <TitledList>
+                      <h2>Areas of Expertise</h2>
+                      <ul>
+                        <li>Absestos Litigation</li>
+                        <li>Toxic Tort</li>
+                        <li>Product Liability</li>
+                        <li>Personal Injury</li>
+                        <li>Premise Libaility</li>
                       </ul>
-                    </div>
+                    </TitledList>
                   </div>
                   <div className="w-full">
                     <p className="p-4">

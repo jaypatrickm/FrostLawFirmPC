@@ -1,8 +1,8 @@
 import React from 'react';
-
 import Header from '../../../components/header/header.component';
-import FooterMobile from '../../../components/_mobile/footer/footer.component';
 import FooterDesktop from '../../../components/_desktop/footer/footer.component';
+import styled from 'styled-components';
+import tw from 'tailwind.macro';
 
 interface MasterLayoutProps {
   children?: object;
@@ -11,21 +11,25 @@ interface MasterLayoutProps {
   showRecognitionAffiliation?: boolean;
 }
 
+const MasterLayoutStyles = styled.div`
+  ${tw`flex flex-col min-h-screen`}
+`;
+
+const MasterLayoutContent = styled.div`
+  ${tw`flex-sticky`}
+`;
+
 const MasterLayout = ({
   isMobile = true,
   page,
   showRecognitionAffiliation = true,
   ...props
 }: MasterLayoutProps) => (
-  <div className="flex flex-col min-h-screen">
+  <MasterLayoutStyles>
     <Header showMobileMenu={false} page={page} />
-    <div className="flex-sticky">{props.children}</div>
-    {isMobile ? (
-      <FooterMobile />
-    ) : (
-      <FooterDesktop showRecognitionAffiliation={showRecognitionAffiliation} />
-    )}
-  </div>
+    <MasterLayoutContent>{props.children}</MasterLayoutContent>
+    <FooterDesktop showRecognitionAffiliation={showRecognitionAffiliation} />
+  </MasterLayoutStyles>
 );
 
 export default MasterLayout;

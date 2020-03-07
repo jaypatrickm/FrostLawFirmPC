@@ -118,7 +118,7 @@ const AboutDesktop = ({ isMobile, page }: AboutPageProps) => {
                   Oklahoma, Georgia, Kentucky, Louisiana, and Texas.
                 </p>
               </div>
-              <div className="max-w-sm mt-10 m-auto">
+              <div className="w-64 mt-10 m-auto">
                 <Button
                   color="text-white bg-frost-orange hover:text-white hover:bg-frost-dark-orange"
                   url="/contact"
@@ -126,7 +126,7 @@ const AboutDesktop = ({ isMobile, page }: AboutPageProps) => {
                   Contact Us
                 </Button>
               </div>
-              <div className="max-w-sm mt-10 m-auto">
+              <div className="w-72 mt-10 m-auto">
                 <Button
                   color="text-white bg-frost-blue hover:text-white hover:bg-frost-dark-blue"
                   url="/attorneys"
@@ -134,7 +134,7 @@ const AboutDesktop = ({ isMobile, page }: AboutPageProps) => {
                   View Our Attorneys
                 </Button>
               </div>
-              <div className="max-w-sm mt-10 m-auto">
+              <div className="w-64 mt-10 m-auto">
                 <Button
                   color="text-white bg-frost-blue hover:text-white hover:bg-frost-dark-blue"
                   url="/blog"
