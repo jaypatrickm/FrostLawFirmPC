@@ -1,9 +1,7 @@
 import { NextPage } from 'next';
-import BlogTitleDesktop from '../../views/desktop/blog/title/index';
-import BlogTitleMobile from '../../views/mobile/blog/title/index';
+import BlogTitleDesktop from '../../views/desktop/blog/title/index.view';
 import { isMobileDetector } from '../../helpers/utils.helpers';
 import BLOG_POST_DATA from '../../data/blog-posts';
-import { string } from 'yup';
 
 const BlogTitle: NextPage<{
   isMobile: boolean;

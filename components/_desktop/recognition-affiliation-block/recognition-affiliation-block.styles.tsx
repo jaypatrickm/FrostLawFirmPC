@@ -14,11 +14,11 @@ export const Title = styled.h2`
 `;
 
 export const ImageLayoutContainer = styled.div`
-  ${tw`flex flex-row lg:flex-no-wrap flex-wrap m-auto`}
+  ${tw`flex flex-row flex-wrap m-auto`}
 `;
 
 export const ImageContainer = styled.div`
-  ${tw`xl:w-1/6 w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 flex items-center`}
+  ${tw`lg:w-2/6 xl:w-9/12 w-1/2 sm:w-1/3 md:w-1/4  flex items-center`}
 `;
 
 export const ImageMask = styled.div`

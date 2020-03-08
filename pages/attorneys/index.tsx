@@ -1,6 +1,5 @@
 import { NextPage } from 'next';
-import AttorneysDesktop from '../../views/desktop/attorneys/index';
-import AttorneysMobile from '../../views/mobile/attorneys/index';
+import AttorneysDesktop from '../../views/desktop/attorneys/index.view';
 import { isMobileDetector } from '../../helpers/utils.helpers';
 
 const Attorneys: NextPage<{ isMobile: boolean; page: string }> = ({

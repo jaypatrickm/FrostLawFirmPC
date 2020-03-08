@@ -29,7 +29,7 @@ export const MobileMenuContainer = styled.div`
 `;
 
 export const MobileMenuButton = styled.button`
-  ${tw`block rounded bg-frost-blue hover:bg-frost-orange`}
+  ${tw`block rounded bg-frost-blue`}
 `;
 
 export const HeaderNavigation = styled.nav<HeaderProps>`

@@ -1,6 +1,5 @@
 import { NextPage } from 'next';
-import HomeDesktop from '../views/desktop/home/index';
-import HomeMobile from '../views/mobile/home/index';
+import HomeDesktop from '../views/desktop/home/index.views';
 import { isMobileDetector } from '../helpers/utils.helpers';
 
 const Home: NextPage<{ isMobile: boolean; page: string }> = ({

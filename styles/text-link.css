@@ -1,5 +1,5 @@
 .text-link {
-  @apply text-frost-blue;
+  @apply text-frost-blue cursor-pointer;
 }
 
 .text-link:visited {

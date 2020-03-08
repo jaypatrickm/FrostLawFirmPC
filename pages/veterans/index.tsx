@@ -1,6 +1,5 @@
 import { NextPage } from 'next';
-import VeteransDesktop from '../../views/desktop/veterans/index';
-import VeteransMobile from '../../views/mobile/veterans/index';
+import VeteransDesktop from '../../views/desktop/veterans/index.view';
 import { isMobileDetector } from '../../helpers/utils.helpers';
 
 const Veterans: NextPage<{ isMobile: boolean; page: string }> = ({

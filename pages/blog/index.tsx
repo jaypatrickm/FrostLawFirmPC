@@ -1,6 +1,5 @@
 import { NextPage } from 'next';
-import BlogDesktop from '../../views/desktop/blog/index';
-import BlogMobile from '../../views/mobile/blog/index';
+import BlogDesktop from '../../views/desktop/blog/index.view';
 import { isMobileDetector } from '../../helpers/utils.helpers';
 
 const Blog: NextPage<{ isMobile: boolean; page: string }> = ({
@@ -13,8 +12,6 @@ const Blog: NextPage<{ isMobile: boolean; page: string }> = ({
 Blog.getInitialProps = async ({ req }) => {
   const userAgent = req ? req.headers['user-agent'] || '' : navigator.userAgent;
   let isMobile = isMobileDetector(userAgent);
-
-  console.log(isMobile);
   return { isMobile, page: 'Blog' };
 };
 

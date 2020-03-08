@@ -1,6 +1,25 @@
 import React from 'react';
 import { NextPage } from 'next';
 import Link from 'next/link';
+import styled from 'styled-components';
+import tw from 'tailwind.macro';
+const Wrapper = styled.div`
+  ${tw`py-2 px-4 bg-frost-light-gray`}
+`;
+
+const LinkAnchor = styled.a.attrs({
+  className: 'text-link'
+})`
+  ${tw`underline`}
+`;
+
+const LinkWrapper = styled.div`
+  ${tw`inline-block`}
+`;
+
+const BlueText = styled.span`
+  ${tw`text-frost-blue px-2`}
+`;
 
 type Props = {
   path1: string;
@@ -20,31 +39,31 @@ const Breadcrumbs: NextPage<Props> = ({
   url3
 }) => {
   return (
-    <div className="py-2 px-4">
+    <Wrapper>
       <Link href={url1}>
-        <a className="underline text-frost-blue">{path1}</a>
+        <LinkAnchor>{path1}</LinkAnchor>
       </Link>
       {path2 !== undefined && url2 !== undefined ? (
-        <span>
-          <span className="text-frost-blue px-2">/</span>
+        <LinkWrapper>
+          <BlueText>/</BlueText>
           <Link href={`${url1}${url2}`}>
-            <a className="underline text-frost-blue">{path2}</a>
+            <LinkAnchor>{path2}</LinkAnchor>
           </Link>
-        </span>
+        </LinkWrapper>
       ) : (
         ''
       )}
       {path3 !== undefined && url3 !== undefined ? (
-        <span>
-          <span className="text-frost-blue px-2">/</span>
+        <LinkWrapper>
+          <BlueText>/</BlueText>
           <Link href={`${url1}${url2}${url3}`}>
-            <a className="underline text-frost-blue">{path3}</a>
+            <LinkAnchor>{path3}</LinkAnchor>
           </Link>
-        </span>
+        </LinkWrapper>
       ) : (
         ''
       )}
-    </div>
+    </Wrapper>
   );
 };
 

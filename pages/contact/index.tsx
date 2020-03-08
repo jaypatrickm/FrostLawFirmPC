@@ -1,6 +1,5 @@
 import { NextPage } from 'next';
-import ContactDesktop from '../../views/desktop/contact/index';
-import ContactMobile from '../../views/mobile/contact/index';
+import ContactDesktop from '../../views/desktop/contact/index.view';
 import { isMobileDetector } from '../../helpers/utils.helpers';
 
 const Contact: NextPage<{ isMobile: boolean; page: string }> = ({

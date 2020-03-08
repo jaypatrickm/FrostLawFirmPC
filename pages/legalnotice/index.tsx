@@ -1,6 +1,5 @@
 import { NextPage } from 'next';
-import LegalNoticeDesktop from '../../views/desktop/legalnotice/index';
-import LegalNoticeMobile from '../../views/mobile/legalnotice/index';
+import LegalNoticeDesktop from '../../views/desktop/legalnotice/index.view';
 import { isMobileDetector } from '../../helpers/utils.helpers';
 
 const LegalNotice: NextPage<{ isMobile: boolean; page: string }> = ({
