@@ -11,7 +11,6 @@ import {
   Address,
   Phone,
   PhoneButtonContainer,
-  TapToCallHelpText,
   TapToCallText
 } from './header.styles';
 import LogoSvg from '../../components/icons/logo/logo.svg';
@@ -102,20 +101,18 @@ const Header = ({ showMobileMenu, page }: HeaderProps) => {
             <br />
             <Phone>Tel: (866) FLF-MESO</Phone>
             <Phone>Fax: (310) 861-8803</Phone>
+            <PhoneButtonContainer active={showMenu}>
+              <>
+                <a href="tel:+1866FLFMESO">
+                  <TapToCallText>
+                    Tap to call <br className="sm:hidden" /> +1(866) FLF-MESO
+                  </TapToCallText>
+                </a>
+              </>
+            </PhoneButtonContainer>
           </MobileMenuContent>
         </HeaderNavigation>
       </HeaderContentLayoutContainer>
-      <PhoneButtonContainer active={showMenu}>
-        <>
-          <a href="tel:+1866FLFMESO">
-            <TapToCallText>Tap to call +1(866) FLF-MESO</TapToCallText>
-            <TapToCallHelpText>
-              *Tapping this button will trigger a phone call on the device you
-              are using.
-            </TapToCallHelpText>
-          </a>
-        </>
-      </PhoneButtonContainer>
     </HeaderWrapper>
   );
 };

@@ -38,7 +38,7 @@ export const HeaderNavigation = styled.nav<HeaderProps>`
 `;
 
 export const MobileMenuContent = styled.div`
-  ${tw`sm:hidden pl-6 pt-8 pb-8`}
+  ${tw`sm:hidden px-6 pt-8 pb-8`}
 `;
 
 export const Address = styled.p`
@@ -50,14 +50,10 @@ export const Phone = styled.span`
 `;
 
 export const PhoneButtonContainer = styled.div<HeaderProps>`
-  ${tw`flex-shrink bg-frost-blue p-4 w-full`}
+  ${tw`bg-frost-orange rounded text-center px-4 py-2 w-full mt-8`}
   ${({ active }) => (active ? tw` block sm:hidden` : tw` hidden`)}
 `;
 
 export const TapToCallText = styled.h3`
   ${tw`block text-white font-bold text-2xl tracking-tight leading-tight`}
-`;
-
-export const TapToCallHelpText = styled.span`
-  ${tw`block text-white font-light text-md leading-tight`}
 `;
