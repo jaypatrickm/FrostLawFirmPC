@@ -43,13 +43,11 @@ export default async function(req: NextApiRequest, res: NextApiResponse) {
   <strong>Comments/Questions:</strong> ${comments}
     `
   };
-  res.status(200).send('Message sent successfully.');
-  // sgMail.send(content, (error: any, result: any) => {
-  //   if (error) {
-  //     console.log('ERROR', error);
-  //     res.status(400).send('Message not sent');
-  //   } else {
-  //     res.status(200).send('Message sent successfully.');
-  //   }
-  // });
+  sgMail.send(content, (error: any, result: any) => {
+    if (error) {
+      res.status(400).send('Message not sent');
+    } else {
+      res.status(200).send('Message sent successfully.');
+    }
+  });
 }
