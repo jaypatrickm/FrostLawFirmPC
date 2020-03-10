@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Formik, Form } from 'formik';
-import * as yup from 'yup';
-import { validateIsPhone } from './contact-form.utils';
+import { validationSchema } from './validationSchema';
 import UsStates from '../../data/us-states';
 import Checkbox from '../../components/checkbox/checkbox.component';
 import TextInput from '../text-input/text-input.component';
@@ -9,12 +8,24 @@ import Dropdown from '../dropdown/dropdown.component';
 import RadioButtons from '../radio-buttons/radio-buttons.component';
 import CheckboxGroup from '../checkbox-group/checkbox-group.component';
 import TextArea from '../text-area/text-area.component';
+import ResponseMessage from '../_desktop/response-message/response-message.component';
+import styled from 'styled-components';
+import tw from 'tailwind.macro';
+
+const Wrapper = styled.div`
+  ${tw`my-8`}
+`;
+
+const FullNameWrapper = styled.div`
+  ${tw`pb-3 px-4`}
+`;
 
 const ContactForm = () => {
   const [method, setMethod] = useState('');
   const [newEmailError, setNewEmailError] = useState(false);
   const [cellRequired, setCellRequired] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [expectResponse, setExpectResponse] = useState(false);
 
   const handleMethod = (value: string) => {
     setMethod(value);
@@ -37,8 +48,28 @@ const ContactForm = () => {
   };
 
   return (
-    <div>
-      <div className="my-6">
+    <Wrapper>
+      {expectResponse ? (
+        submitSuccess ? (
+          <ResponseMessage
+            title="Thank you!"
+            content="Your message has been sent."
+            type="success"
+          />
+        ) : (
+          <ResponseMessage
+            title="Something went wrong."
+            content="We could not send your message. Please try again in a few moments."
+            type="info"
+          />
+        )
+      ) : (
+        ''
+      )}
+
+      {expectResponse && submitSuccess ? (
+        ''
+      ) : (
         <Formik
           initialValues={{
             fullName: '',
@@ -54,75 +85,9 @@ const ContactForm = () => {
             biopsyPerformed: '',
             comments: ''
           }}
-          validationSchema={yup.object({
-            fullName: yup
-              .string()
-              .matches(
-                /([a-zA-Z\'\,\.\-]+ [a-zA-Z\'\,\.\-]+)+$/i,
-                'ex. John Doe'
-              )
-              .required('Full Name is required'),
-            city: yup
-              .string()
-              .matches(/([a-z])+/g, 'ex. San Pedro')
-              .required('City is required'),
-            state: yup
-              .string()
-              .notOneOf(['-1', 'State is required'])
-              .required('State is required'),
-            contactMethod: yup
-              .mixed()
-              .oneOf(['Email', 'Phone'])
-              .required('Preferred Contact Method required'),
-            email: yup.string().when('contactMethod', {
-              is: 'Email',
-              then: yup
-                .string()
-                .email('ex. youremail@address.com')
-                .required('Email is required'),
-              otherwise: yup.string().min(0)
-            }),
-            cellNumber: yup
-              .string()
-              .test('cellNumbertest', 'Cell Number required', function(value) {
-                const { homeNumber, contactMethod } = this.parent;
-                return !validateIsPhone(homeNumber) && contactMethod == 'Phone'
-                  ? value != null
-                  : true;
-              })
-              .test('cellNumberRegextest', 'ex. 310-777-3333', function(value) {
-                const { homeNumber, contactMethod } = this.parent;
-                return contactMethod == 'Phone' && !validateIsPhone(homeNumber)
-                  ? validateIsPhone(value)
-                  : true;
-              }),
-            homeNumber: yup
-              .string()
-              .test('homeNumbertest', 'Home Number required', function(value) {
-                const { cellNumber, contactMethod } = this.parent;
-                return !validateIsPhone(cellNumber) && contactMethod == 'Phone'
-                  ? value != null
-                  : true;
-              })
-              .test('homeNumberRegextest', 'ex. 310-777-3333', function(value) {
-                const { cellNumber, contactMethod } = this.parent;
-                return contactMethod == 'Phone' && !validateIsPhone(cellNumber)
-                  ? validateIsPhone(value)
-                  : true;
-              }),
-            isTextOkay: yup.boolean().notRequired(),
-            preferredTime: yup.array().when('contactMethod', {
-              is: 'Phone',
-              then: yup
-                .array<'Morning' | 'Afternoon' | 'Evening'>()
-                .of(yup.string())
-                .required('Preferred Contact Method required'),
-              otherwise: yup.array().notRequired()
-            }),
-            hasDiagnosis: yup.array().notRequired(),
-            biopsyPerformed: yup.mixed().notRequired()
-          })}
+          validationSchema={validationSchema}
           onSubmit={async (values, { setSubmitting }) => {
+            setSubmitting(false);
             await fetch('/api/contact', {
               method: 'post',
               headers: {
@@ -131,17 +96,13 @@ const ContactForm = () => {
               },
               body: JSON.stringify(values)
             }).then(res => {
-              setSubmitted(res.status === 200);
+              setExpectResponse(true);
+              setSubmitSuccess(res.status === 200);
             });
-            //console.log(JSON.stringify(values, null, 2));
-            // setTimeout(() => {
-            //   alert(JSON.stringify(values, null, 2));
-            //   setSubmitting(false);
-            // }, 400);
           }}
         >
           <Form>
-            <div className="pb-3 px-4">
+            <FullNameWrapper>
               <TextInput
                 label="Full Name"
                 id="fullName"
@@ -149,7 +110,7 @@ const ContactForm = () => {
                 required={true}
                 type="text"
               />
-            </div>
+            </FullNameWrapper>
             <div className="flex flex-wrap px-4">
               <div className="pb-3 pr-1 w-1/2">
                 <TextInput
@@ -253,7 +214,11 @@ const ContactForm = () => {
                 <CheckboxGroup
                   choices={[
                     { id: 'Morning', label: 'Morning', value: 'Morning' },
-                    { id: 'Afternoon', label: 'Afternoon', value: 'Afternoon' },
+                    {
+                      id: 'Afternoon',
+                      label: 'Afternoon',
+                      value: 'Afternoon'
+                    },
                     { id: 'Evening', label: 'Evening', value: 'Evening' }
                   ]}
                   name="preferredTime"
@@ -281,7 +246,11 @@ const ContactForm = () => {
                     label: 'Mother',
                     value: 'Mother'
                   },
-                  { id: 'hasDiagonsisOther', label: 'Other', value: 'Other' }
+                  {
+                    id: 'hasDiagonsisOther',
+                    label: 'Other',
+                    value: 'Other'
+                  }
                 ]}
                 name="hasDiagnosis"
                 groupLabel="Check here if you or someone you know has Mesothelioma, Asbestosis,
@@ -305,10 +274,13 @@ const ContactForm = () => {
               <TextArea label="Comments/Questions" name="comments" />
             </div>
 
-            <div className="pb-3 mt-2 px-4 lg:mt-8">
+            <div className="fixed m-auto w-full left-0 bottom-0 bg-white sm:relative py-3 px-4 mt-2 lg:mt-8">
               <button
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                }}
                 type="submit"
-                className="py-3 lg:py-3 text-white bg-frost-orange hover:bg-frost-dark-orange rounded block w-full"
+                className="py-3 m-auto text-white bg-frost-orange hover:bg-frost-dark-orange rounded block w-full"
               >
                 <span className="text-xl lg:text-2xl font-extrabold tracking-wide leading-tight text-white flex justify-center">
                   Submit
@@ -317,8 +289,8 @@ const ContactForm = () => {
             </div>
           </Form>
         </Formik>
-      </div>
-    </div>
+      )}
+    </Wrapper>
   );
 };
 

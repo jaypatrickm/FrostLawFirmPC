@@ -2,6 +2,7 @@ import React from 'react';
 import MasterLayout from '../../layouts/master/master.layout';
 import Breadcrumbs from '../../../components/breadcrumbs/breadcrumbs.component';
 import ContactForm from '../../../components/contact-form/contact-form.component';
+
 import {
   Wrapper,
   LayoutContainer,
@@ -10,7 +11,8 @@ import {
   FormContainer,
   TextContainer,
   Text,
-  TextButton
+  TextButton,
+  RequiredText
 } from './index.styles';
 
 type ContactDesktopProps = {
@@ -22,7 +24,6 @@ const ContactDesktop = ({ isMobile, page }: ContactDesktopProps) => {
   return (
     <MasterLayout isMobile={isMobile} page={page}>
       <Breadcrumbs path1="Home" url1="/" path2="Contact" url2="contact" />
-
       <Wrapper>
         <LayoutContainer>
           <Header>Contact Us</Header>
@@ -36,6 +37,9 @@ const ContactDesktop = ({ isMobile, page }: ContactDesktopProps) => {
               </Text>
             </TextContainer>
             <FormContainer>
+              <RequiredText>
+                <span>*</span>required fields.
+              </RequiredText>
               <ContactForm />
             </FormContainer>
           </ContentContainer>

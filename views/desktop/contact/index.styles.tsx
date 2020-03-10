@@ -32,3 +32,12 @@ export const Text = styled.p`
 export const TextButton = styled.span`
   ${tw`mb-4 font-bold text-white bg-frost-orange hover:bg-frost-dark-orange w-full block py-2 rounded text-center cursor-pointer`}
 `;
+
+export const RequiredText = styled.p`
+  ${tw`px-4 text-xl`}
+  & {
+    span {
+      ${tw`text-red-600 font-bold`}
+    }
+  }
+`;
