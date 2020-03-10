@@ -1,6 +1,5 @@
 import { NextPage } from 'next';
 import SiteMapDesktop from '../../views/desktop/sitemap/index';
-import SiteMapMobile from '../../views/mobile/sitemap/index';
 import { isMobileDetector } from '../../helpers/utils.helpers';
 
 const SiteMap: NextPage<{ isMobile: boolean; page: string }> = ({
