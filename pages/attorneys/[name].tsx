@@ -1,9 +1,7 @@
-import { NextPage, NextPageContext } from 'next';
-import AttorneysNameMobile from '../../views/mobile/attorneys/name/index';
+import { NextPageContext } from 'next';
 import AttorneysNameDesktop from '../../views/desktop/attorneys/name/index.view';
 import { isMobileDetector } from '../../helpers/utils.helpers';
 import ATTORNEYS_DATA from '../../data/attorneys';
-import url from 'url';
 
 type AttorneyInfo = {
   name: string;
