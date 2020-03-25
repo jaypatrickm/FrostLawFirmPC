@@ -3,8 +3,13 @@ import { NextPage } from 'next';
 import Link from 'next/link';
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
+
 const Wrapper = styled.div`
   ${tw`py-2 px-4 bg-frost-light-gray`}
+`;
+
+const LayoutContainer = styled.div`
+  ${tw`max-w-screen-xl m-auto`}
 `;
 
 const LinkAnchor = styled.a.attrs({
@@ -40,29 +45,31 @@ const Breadcrumbs: NextPage<Props> = ({
 }) => {
   return (
     <Wrapper>
-      <Link href={url1}>
-        <LinkAnchor>{path1}</LinkAnchor>
-      </Link>
-      {path2 !== undefined && url2 !== undefined ? (
-        <LinkWrapper>
-          <BlueText>/</BlueText>
-          <Link href={`${url1}${url2}`}>
-            <LinkAnchor>{path2}</LinkAnchor>
-          </Link>
-        </LinkWrapper>
-      ) : (
-        ''
-      )}
-      {path3 !== undefined && url3 !== undefined ? (
-        <LinkWrapper>
-          <BlueText>/</BlueText>
-          <Link href={`${url1}${url2}${url3}`}>
-            <LinkAnchor>{path3}</LinkAnchor>
-          </Link>
-        </LinkWrapper>
-      ) : (
-        ''
-      )}
+      <LayoutContainer>
+        <Link href={url1}>
+          <LinkAnchor>{path1}</LinkAnchor>
+        </Link>
+        {path2 !== undefined && url2 !== undefined ? (
+          <LinkWrapper>
+            <BlueText>/</BlueText>
+            <Link href={`${url1}${url2}`}>
+              <LinkAnchor>{path2}</LinkAnchor>
+            </Link>
+          </LinkWrapper>
+        ) : (
+          ''
+        )}
+        {path3 !== undefined && url3 !== undefined ? (
+          <LinkWrapper>
+            <BlueText>/</BlueText>
+            <Link href={`${url1}${url2}${url3}`}>
+              <LinkAnchor>{path3}</LinkAnchor>
+            </Link>
+          </LinkWrapper>
+        ) : (
+          ''
+        )}
+      </LayoutContainer>
     </Wrapper>
   );
 };

@@ -28,21 +28,22 @@ const BlogCardVertical = ({
   urlFriendlyTitle
 }: BlogCardVerticalProps) => {
   return (
-    <Wrapper>
-      <LayoutContainer>
-        <LayoutLeft>
-          <Image src={imageUrl} />
-        </LayoutLeft>
-        <LayoutRight>
-          <Title>{title}</Title>
-          <Author>Posted By {author}</Author>
-          <Date>{postedDate}</Date>
-          <Link href={`/blog/${urlFriendlyTitle}`}>
+    <Link href={`/blog/${urlFriendlyTitle}`}>
+      <Wrapper>
+        <LayoutContainer>
+          <LayoutLeft>
+            <Image src={imageUrl} />
+          </LayoutLeft>
+          <LayoutRight>
+            <Title>{title}</Title>
+            <Author>Posted By {author}</Author>
+            <Date>{postedDate}</Date>
+
             <LinkAnchor>Read more</LinkAnchor>
-          </Link>
-        </LayoutRight>
-      </LayoutContainer>
-    </Wrapper>
+          </LayoutRight>
+        </LayoutContainer>
+      </Wrapper>
+    </Link>
   );
 };
 

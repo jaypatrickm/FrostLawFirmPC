@@ -38,7 +38,11 @@ const Footer = ({ showRecognitionAffiliation = true }: FooterProps) => {
               San Pedro, CA 90731
             </Address>
             <PhoneContainer>
-              <Phone>Tel: (866) FLF-MESO</Phone>
+              <Phone>
+                <a className="hover:text-frost-orange" href="tel:+1866FLFMESO">
+                  Tel: (866) FLF-MESO
+                </a>
+              </Phone>
               <Phone> Fax: (310) 861-8803</Phone>
             </PhoneContainer>
           </LogoTextAndInfoContainer>

@@ -28,19 +28,19 @@ const BlogCardHorizontal = ({
   urlFriendlyTitle
 }: BlogCardHorizontalProps) => {
   return (
-    <LayoutWrapper>
-      <ImageContainer>
-        <Image src={imageUrl} />
-      </ImageContainer>
-      <Title>{title}</Title>
-      <Author>Posted By {author}</Author>
-      <Date>{postedDate}</Date>
-      <LinkContainer>
-        <Link href={`/blog/${urlFriendlyTitle}`}>
+    <Link href={`/blog/${urlFriendlyTitle}`}>
+      <LayoutWrapper>
+        <ImageContainer>
+          <Image src={imageUrl} />
+        </ImageContainer>
+        <Title>{title}</Title>
+        <Author>Posted By {author}</Author>
+        <Date>{postedDate}</Date>
+        <LinkContainer>
           <LinkAnchor>Read more</LinkAnchor>
-        </Link>
-      </LinkContainer>
-    </LayoutWrapper>
+        </LinkContainer>
+      </LayoutWrapper>
+    </Link>
   );
 };
 

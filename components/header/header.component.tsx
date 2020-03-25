@@ -99,7 +99,11 @@ const Header = ({ showMobileMenu, page }: HeaderProps) => {
               San Pedro, CA 90731
             </Address>
             <br />
-            <Phone>Tel: (866) FLF-MESO</Phone>
+            <Phone>
+              <a className="hover:text-frost-orange" href="tel:+1866FLFMESO">
+                Tel: (866) FLF-MESO
+              </a>
+            </Phone>
             <Phone>Fax: (310) 861-8803</Phone>
             <PhoneButtonContainer active={showMenu}>
               <>

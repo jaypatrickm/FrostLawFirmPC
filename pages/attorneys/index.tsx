@@ -13,7 +13,6 @@ Attorneys.getInitialProps = async ({ req }) => {
   const userAgent = req ? req.headers['user-agent'] || '' : navigator.userAgent;
   let isMobile = isMobileDetector(userAgent);
 
-  console.log(isMobile);
   return { isMobile, page: 'Attorneys' };
 };
 

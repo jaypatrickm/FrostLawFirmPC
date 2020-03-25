@@ -11,7 +11,7 @@ export const HeaderWrapper = styled.div<HeaderProps>`
 `;
 
 export const HeaderContentLayoutContainer = styled.div<HeaderProps>`
-  ${tw`w-full sm:flex`}
+  ${tw`w-full sm:flex max-w-screen-xl`}
   ${({ active }) =>
     active ? tw`md:justify-between flex-sticky` : tw`sm:justify-between`}
 `;

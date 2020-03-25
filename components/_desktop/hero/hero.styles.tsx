@@ -19,7 +19,7 @@ export const HeroContentLayoutContainer = styled.div`
 `;
 
 export const HeroContentLeft = styled.div`
-  ${tw`w-full lg:w-2/3 md:px-4`}
+  ${tw`w-full lg:w-2/3`}
 `;
 
 export const HeroContentRight = styled.div`

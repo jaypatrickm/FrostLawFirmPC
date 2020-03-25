@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
 export const LayoutWrapper = styled.div`
-  ${tw`sm:mx-4 bg-white shadow pb-4 mb-4`}
+  ${tw`sm:mx-4 bg-white shadow pb-4 mb-4 cursor-pointer`}
 `;
 
 export const ImageContainer = styled.div`

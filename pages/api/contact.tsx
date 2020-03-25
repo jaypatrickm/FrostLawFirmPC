@@ -21,8 +21,8 @@ export default async function(req: NextApiRequest, res: NextApiResponse) {
     comments
   } = req.body;
   const content = {
-    to: 'jaypatrickm@gmail.com',
-    from: 'jaypatrickm@gmail.com',
+    to: 'admin@frostlawfirm.com',
+    from: 'admin@frostlawfirm.com',
     subject: `Contact us from ${fullName}`,
     text: `Please view in html`,
     html: `<strong>Information Submitted:</strong> <br>

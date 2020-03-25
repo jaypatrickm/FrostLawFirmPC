@@ -99,7 +99,7 @@ const AttorneysNameDesktop = ({
                     <Accordion
                       key={index}
                       accordionTitle={item.title}
-                      accordionList={item.items}
+                      accordionList={item.items.sort()}
                     />
                   );
                 })}

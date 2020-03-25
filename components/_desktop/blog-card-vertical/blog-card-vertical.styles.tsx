@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
 export const Wrapper = styled.div`
-  ${tw`md:ml-4 bg-white shadow mb-4`}
+  ${tw`md:ml-4 bg-white shadow mb-4 cursor-pointer`}
 `;
 export const LayoutContainer = styled.div`
   ${tw`flex flex-col md:flex-row md:h-40 md:overflow-hidden`}

@@ -16,6 +16,10 @@ const Accordion: NextPage<Props> = ({ accordionTitle, accordionList }) => {
     return !isOpen;
   };
 
+  function createMarkup(markup: any) {
+    return { __html: markup };
+  }
+
   return (
     <div className="mb-8 border-solid border-2 border-frost-blue w-full">
       <div
@@ -37,12 +41,9 @@ const Accordion: NextPage<Props> = ({ accordionTitle, accordionList }) => {
       <div className={isOpen ? 'block' : 'hidden'}>
         <ul>
           {accordionList.map((value, index) => {
-            function createMarkup() {
-              return { __html: value };
-            }
             return (
               <li
-                dangerouslySetInnerHTML={createMarkup()}
+                dangerouslySetInnerHTML={createMarkup(value)}
                 key={index}
                 className={(index % 2 ? '' : ' bg-white') + ' py-3 px-4'}
               ></li>

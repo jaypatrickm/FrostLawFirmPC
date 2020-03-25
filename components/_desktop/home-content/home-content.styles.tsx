@@ -9,7 +9,7 @@ export const Title = styled.div`
   ${tw`text-frost-blue text-4xl lg:text-5xl font-extrabold text-center`}
 `;
 export const Paragraph = styled.p`
-  ${tw`mt-3 leading-tight tracking-wider text-lg lg:text-2xl`}
+  ${tw`mt-3 leading-normal tracking-wider text-lg lg:text-2xl`}
 `;
 
 export const Question = styled.h3`
