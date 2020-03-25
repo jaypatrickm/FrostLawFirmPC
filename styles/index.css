@@ -10,5 +10,6 @@
 @import './line-clamp.css';
 /* purgecss start ignore */
 @import './video-youtube.css';
+/* purgecss end ignore */
 
 @import 'tailwindcss/utilities';
