@@ -31,9 +31,9 @@ export const ButtonsLayoutContainer = styled.div`
 `;
 
 export const ButtonsLeft = styled.div`
-  ${tw`mr-4`}
+  ${tw`mr-0 sm:mr-4`}
 `;
 
 export const ButtonsRight = styled.div`
-  ${tw`mt-6 md:mt-0 mr-4 md:mr-0`}
+  ${tw`mt-6 md:mt-0 mr-0 sm:mr-4 md:mr-0`}
 `;

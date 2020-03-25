@@ -8,6 +8,7 @@
 @import './text-link.css';
 
 @import './line-clamp.css';
+/* purgecss start ignore */
 @import './video-youtube.css';
 
 @import 'tailwindcss/utilities';
