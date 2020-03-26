@@ -33,17 +33,17 @@ const BlogCardHorizontal = ({
       as={`/blog/${urlFriendlyTitle}`}
       passHref
     >
-      <LayoutWrapper>
-        <ImageContainer>
-          <Image src={imageUrl} />
-        </ImageContainer>
-        <Title>{title}</Title>
-        <Author>Posted By {author}</Author>
-        <Date>{postedDate}</Date>
-        <LinkContainer>
-          <LinkAnchor>Read more</LinkAnchor>
-        </LinkContainer>
-      </LayoutWrapper>
+      <LinkAnchor>
+        <LayoutWrapper>
+          <ImageContainer>
+            <Image src={imageUrl} />
+          </ImageContainer>
+          <Title>{title}</Title>
+          <Author>Posted By {author}</Author>
+          <Date>{postedDate}</Date>
+          <LinkContainer>Read more</LinkContainer>
+        </LayoutWrapper>
+      </LinkAnchor>
     </Link>
   );
 };

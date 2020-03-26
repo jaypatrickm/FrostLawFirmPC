@@ -46,13 +46,13 @@ const Breadcrumbs: NextPage<Props> = ({
   return (
     <Wrapper>
       <LayoutContainer>
-        <Link href={url1}>
+        <Link href={url1} passHref>
           <LinkAnchor>{path1}</LinkAnchor>
         </Link>
         {path2 !== undefined && url2 !== undefined ? (
           <LinkWrapper>
             <BlueText>/</BlueText>
-            <Link href={`${url1}${url2}`}>
+            <Link href={`${url1}${url2}`} passHref>
               <LinkAnchor>{path2}</LinkAnchor>
             </Link>
           </LinkWrapper>
@@ -62,7 +62,7 @@ const Breadcrumbs: NextPage<Props> = ({
         {path3 !== undefined && url3 !== undefined ? (
           <LinkWrapper>
             <BlueText>/</BlueText>
-            <Link href={`${url1}${url2}${url3}`}>
+            <Link href={`${url1}${url2}${url3}`} passHref>
               <LinkAnchor>{path3}</LinkAnchor>
             </Link>
           </LinkWrapper>

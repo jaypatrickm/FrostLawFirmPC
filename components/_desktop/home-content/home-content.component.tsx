@@ -30,7 +30,7 @@ const HomeContent = () => {
         to say that you are not alone. Our attorneys know first-hand what a
         life-changing diagnosis can do to a person and family.
       </Paragraph>
-      <Link href="/about">
+      <Link href="/about" passHref>
         <TextLink>Click here to go to Scott Frost’s story.</TextLink>
       </Link>
       <Paragraph>

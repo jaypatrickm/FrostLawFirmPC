@@ -118,9 +118,7 @@ const AttorneysNameDesktop = ({
                 />
               </ProfileRecognitionAffiliationBlockContainer>
               <ButtonContainer>
-                <Link href="/contact">
-                  <ButtonPrimary>Contact Us</ButtonPrimary>
-                </Link>
+                <ButtonPrimary url="/contact">Contact Us</ButtonPrimary>
               </ButtonContainer>
             </LayoutRightContainer>
           </LayoutBottomContainer>

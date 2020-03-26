@@ -18,7 +18,7 @@ const TextSpan = styled.span`
 
 const ButtonPrimary = ({ children, url = '' }: ButtonPrimaryProps) => {
   return (
-    <Link href={url}>
+    <Link href={url} passHref>
       <RoundedAnchor>
         <TextSpan>{children}</TextSpan>
       </RoundedAnchor>

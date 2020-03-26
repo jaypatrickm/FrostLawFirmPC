@@ -49,13 +49,13 @@ const Footer = ({ showRecognitionAffiliation = true }: FooterProps) => {
         </FooterContentLeftLayout>
         <FooterContentRightLayout>
           <NavigationLayoutContainer>
-            <Link href="/sitemap">
+            <Link href="/sitemap" passHref>
               <NavigationAnchor>Site Map</NavigationAnchor>
             </Link>
-            <Link href="/contact">
+            <Link href="/contact" passHref>
               <NavigationAnchor>Contact</NavigationAnchor>
             </Link>
-            <Link href="/legalnotice">
+            <Link href="/legalnotice" passHref>
               <NavigationAnchor>Legal Notice</NavigationAnchor>
             </Link>
           </NavigationLayoutContainer>

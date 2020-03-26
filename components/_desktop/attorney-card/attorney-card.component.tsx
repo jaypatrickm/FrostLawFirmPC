@@ -49,7 +49,11 @@ const AttorneyCard = ({
         <ContentWrapper>
           <p>{description}</p>
           <LinkContainer>
-            <Link href={`/attorneys/${urlFriendlyName}`}>
+            <Link
+              href={`/attorneys/[name]`}
+              as={`/attorneys/${urlFriendlyName}`}
+              passHref
+            >
               <ButtonSquare>Learn More</ButtonSquare>
             </Link>
           </LinkContainer>

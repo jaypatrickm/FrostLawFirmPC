@@ -23,7 +23,7 @@ const HighlightsResultsBlogBlock = () => {
         <LayoutRightBlock>
           <BlogHeaderContainer>
             From our&nbsp;
-            <Link href="/blog">
+            <Link href="/blog" passHref>
               <BlogLink>blog</BlogLink>
             </Link>
             ...
