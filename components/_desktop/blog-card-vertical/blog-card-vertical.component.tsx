@@ -28,7 +28,7 @@ const BlogCardVertical = ({
   urlFriendlyTitle
 }: BlogCardVerticalProps) => {
   return (
-    <Link href={`/blog/${urlFriendlyTitle}`}>
+    <Link href={`/blog/${urlFriendlyTitle}`} as={`/blog/${urlFriendlyTitle}`}>
       <Wrapper>
         <LayoutContainer>
           <LayoutLeft>
