@@ -49,9 +49,9 @@ const Footer = ({ showRecognitionAffiliation = true }: FooterProps) => {
         </FooterContentLeftLayout>
         <FooterContentRightLayout>
           <NavigationLayoutContainer>
-            <Link href="/sitemap" passHref>
+            {/* <Link href="/sitemap" passHref>
               <NavigationAnchor>Site Map</NavigationAnchor>
-            </Link>
+            </Link> */}
             <Link href="/contact" passHref>
               <NavigationAnchor>Contact</NavigationAnchor>
             </Link>
