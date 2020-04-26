@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://www.frostlawfirm.com">
-    <img src="https//www.frostlawfirm.com/assets/FLFlogo@3x.png" alt="Frost Law Firm Logo" width="108" height="108">
+    <img src="assets/FLFlogo@3x.png" alt="Frost Law Firm Logo" width="108" height="108">
   </a>
 
   <h3 align="center">Frost Law Firm, PC Website</h3>
@@ -90,4 +90,4 @@ Project Link: [https://www.frostlawfirm.com](https://www.frostlawfirm.com)
 * [SendGrid](https://sendgrid.com/)
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[frostlawfirm-landing]: https//www.frostlawfirm.com/assets/frostlawfirm_landing.png
+[frostlawfirm-landing]: assets/frostlawfirm_landing.png
