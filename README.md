@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://www.frostlawfirm.com">
-    <img src="assets/FLFlogo@3x.png" alt="Frost Law Firm Logo" width="108" height="108">
+    <img src="https//www.frostlawfirm.com/assets/FLFlogo@3x.png" alt="Frost Law Firm Logo" width="108" height="108">
   </a>
 
   <h3 align="center">Frost Law Firm, PC Website</h3>
@@ -36,7 +36,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Frost Law Firm Landing][(/assets/frostlawfirm_landing.png)(https://www.frostlawfirm.com)
+[![Frost Law Firm Landing][frostlawfirm-landing](https://www.frostlawfirm.com)
 
 This is a pro bono project for Frost Law Firm, PC. The firm had asked if I could help with their website. They did not give me any design for the website only providing a logo, some images, some body copy and attorney bios. I created a new site structure, design, adding a contact form, and including the front end for a blog. My plan was to integrate a headless CMS for blogging. They have decided to hire an entire team to continue the development. 
 
@@ -88,3 +88,6 @@ Project Link: [https://www.frostlawfirm.com](https://www.frostlawfirm.com)
 * [Formik](https://jaredpalmer.com/formik/)
 * [Yup](https://github.com/jquense/yup)
 * [SendGrid](https://sendgrid.com/)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[frostlawfirm-landing]: https//www.frostlawfirm.com/assets/frostlawfirm_landing.png
