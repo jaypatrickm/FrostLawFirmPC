@@ -10,9 +10,6 @@
   <p align="center">
     Informational website designed and developed by Jay Manalansan
     <br />
-    <a href="https://github.com/jaypatrickm/FrostLawFirm2"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
     <a href="https://www.frostlawfirm.com">View Site</a>
   </p>
 </p>
