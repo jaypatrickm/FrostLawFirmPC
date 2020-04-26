@@ -36,7 +36,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Frost Law Firm Landing][frostlawfirm-landing](https://www.frostlawfirm.com)
+[![Frost Law Firm Landing][frostlawfirm-landing]](https://www.frostlawfirm.com)
 
 This is a pro bono project for Frost Law Firm, PC. The firm had asked if I could help with their website. They did not give me any design for the website only providing a logo, some images, some body copy and attorney bios. I created a new site structure, design, adding a contact form, and including the front end for a blog. My plan was to integrate a headless CMS for blogging. They have decided to hire an entire team to continue the development. 
 
