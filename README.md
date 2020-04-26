@@ -1,55 +1,90 @@
-# Tailwind CSS example
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://www.frostlawfirm.com">
+    <img src="assets/FLFlogo@3x.png" alt="Frost Law Firm Logo" width="108" height="108">
+  </a>
 
-This is an example of using [Tailwind CSS](https://tailwindcss.com) in a Next.js project.
+  <h3 align="center">Frost Law Firm, PC Website</h3>
 
-## Deploy your own
+  <p align="center">
+    Informational website designed and developed by Jay Manalansan
+    <br />
+    <a href="https://github.com/jaypatrickm/FrostLawFirm2"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://www.frostlawfirm.com">View Site</a>
+  </p>
+</p>
 
-Deploy the example using [ZEIT Now](https://zeit.co/now):
 
-[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/zeit/next.js/tree/canary/examples/with-tailwindcss)
 
-## How to use
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
 
-### Using `create-next-app`
+- [Table of Contents](#table-of-contents)
+- [About The Project](#about-the-project)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Contact](#contact)
+- [Acknowledgements](#acknowledgements)
 
-Execute [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
 
-```bash
-npm init next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+[![Frost Law Firm Landing][(/assets/frostlawfirm_landing.png)(https://www.frostlawfirm.com)
+
+This is a pro bono project for Frost Law Firm, PC. The firm had asked if I could help with their website. They did not give me any design for the website only providing a logo, some images, some body copy and attorney bios. I created a new site structure, design, adding a contact form, and including the front end for a blog. My plan was to integrate a headless CMS for blogging. They have decided to hire an entire team to continue the development. 
+
+
+### Built With
+* [Next.JS](https://nextjs.org/)
+* [TailwindCSS](https://tailwindcss.com/)
+* [Styled-Components](https://styled-components.com/)
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+### Prerequisites
+
+* npm
+```sh
+npm install npm@latest -g
 ```
 
-### Download manually
+### Installation
 
-Download the example:
-
-```bash
-curl https://codeload.github.com/zeit/next.js/tar.gz/canary | tar -xz --strip=2 next.js-canary/examples/with-tailwindcss
-cd with-tailwindcss
+1. Clone the repo
+```sh
+git clone https://github.com/jaypatrickm/FrostLawFirm2.git
 ```
-
-Install it and run:
-
-```bash
+3. Install NPM packages
+```sh
 npm install
+```
+4. The App uses the scripts Next(https://nextjs.org/docs/getting-started) sets up. To run development mode: 
+```JS
 npm run dev
-# or
-yarn
-yarn dev
 ```
 
-Deploy it to the cloud with [ZEIT Now](https://zeit.co/new?filter=next.js&utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
 
-## Notes
+<!-- CONTACT -->
+## Contact
 
-This setup is a basic starting point for using [Tailwind CSS](https://tailwindcss.com) with Next.js. This example also includes the following [PostCSS](https://github.com/postcss/postcss) plugins:
+Jay Manalansan - [@jaypatrickm](https://twitter.com/jaypatrickm) - jaypatrickm@gmail.com
 
-- [postcss-preset-env](https://preset-env.cssdb.org/) - Adds stage 2+ features and autoprefixes
-- [purgecss](https://github.com/FullHuman/purgecss) - Removes unused CSS
+Project Link: [https://www.frostlawfirm.com](https://www.frostlawfirm.com)
 
-## Limitations
 
-### Dynamically generated class strings will be purged
 
-Purgecss takes a very straightforward approach to removing unused CSS. It simply searches an entire file for a string that matches a regular expression. As a result, class strings that are dynamically created in a template using string concatenation will be considered unused and removed from your stylesheet. Tailwind CSS addresses this problem in more detail in [their documentation](https://tailwindcss.com/docs/controlling-file-size#writing-purgeable-html).
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+* [Formik](https://jaredpalmer.com/formik/)
+* [Yup](https://github.com/jquense/yup)
+* [SendGrid](https://sendgrid.com/)
