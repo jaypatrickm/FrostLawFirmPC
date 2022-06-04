@@ -39,6 +39,8 @@ I used Next.js, TypeScript, Tailwind CSS, and styled-components.
 I also used SendGrid and Formik to submit customer contact information to a Frost Law Firm email account.
 They wanted a "small mom and pop shop" feel and their clients are typically less tech-familiar seniors who may be diagnosed with cancer. I researched web accessibility and balanced design choices that reflected what I found with some aesthetics Frost Law Firm wanted. 
 
+Frost Law Firm loved the site and had it deployed, but they ended up utilizing a marketing team that specializes in law that took over the consumer-facing website. They did use my website as inspiration.  
+
 
 ### Built With
 * [Next.JS](https://nextjs.org/)
@@ -78,7 +80,7 @@ npm run dev
 
 Jay Manalansan - [@jaypatrickm](https://twitter.com/jaypatrickm) - jaypatrickm@gmail.com
 
-Project Link: [https://www.frostlawfirm.com](https://frostlawfirm2.vercel.app/)
+Project Link: [https://frostlawfirm2.vercel.app](https://frostlawfirm2.vercel.app/)
 
 
 
