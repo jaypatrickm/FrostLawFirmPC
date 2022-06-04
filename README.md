@@ -1,16 +1,16 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://www.frostlawfirm.com">
+  <a href="https://frostlawfirm2.vercel.app">
     <img src="public/assets/FLFlogo@3x.png" alt="Frost Law Firm Logo" width="108" height="108">
   </a>
 
   <h3 align="center">Frost Law Firm, PC Website</h3>
 
   <p align="center">
-    Informational website designed and developed by Jay Manalansan
+    Informational website developed and designed by Jaypatrick Manalansan
     <br />
-    <a href="https://www.frostlawfirm.com">View Site</a>
+    <a href="https://frostlawfirm2.vercel.app">View Site</a>
   </p>
 </p>
 
@@ -78,7 +78,7 @@ npm run dev
 <!-- CONTACT -->
 ## Contact
 
-Jay Manalansan - [@jaypatrickm](https://twitter.com/jaypatrickm) - jaypatrickm@gmail.com
+Jaypatrick Manalansan - jaypatrickm@gmail.com 
 
 Project Link: [https://frostlawfirm2.vercel.app](https://frostlawfirm2.vercel.app/)
 
