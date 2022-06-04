@@ -33,9 +33,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Frost Law Firm Landing][frostlawfirm-landing]](https://www.frostlawfirm.com)
+[![Frost Law Firm Landing][frostlawfirm-landing]](https://frostlawfirm2.vercel.app/)
 
-This is a pro bono project for Frost Law Firm, PC. The firm had asked if I could help with their website. They did not give me any design for the website only providing a logo, some images, some body copy and attorney bios. I created a new site structure, design, adding a contact form, and including the front end for a blog. My plan was to integrate a headless CMS for blogging. They have decided to hire an entire team to continue the development. 
+I used Next.js, TypeScript, Tailwind CSS, and styled-components. 
+I also used SendGrid and Formik to submit customer contact information to a Frost Law Firm email account.
+They wanted a "small mom and pop shop" feel and their clients are typically less tech-familiar seniors who may be diagnosed with cancer. I researched web accessibility and balanced design choices that reflected what I found with some aesthetics Frost Law Firm wanted. 
 
 
 ### Built With
@@ -76,7 +78,7 @@ npm run dev
 
 Jay Manalansan - [@jaypatrickm](https://twitter.com/jaypatrickm) - jaypatrickm@gmail.com
 
-Project Link: [https://www.frostlawfirm.com](https://www.frostlawfirm.com)
+Project Link: [https://www.frostlawfirm.com](https://frostlawfirm2.vercel.app/)
 
 
 
